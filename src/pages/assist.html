@@ -1,0 +1,60 @@
+<!--meta
+{"route": "/assist/", "title": "Payment Provider Matching Service · [DIRECTORY NAME]",
+ "description": "Tell us about your business once. We shortlist payment providers that fit, make the introductions and support you through onboarding.",
+ "crumbs": [["Home", "/"], ["Assist", null]],
+ "jsonld": [{"@type": "Service", "name": "Assist", "serviceType": "Payment provider matching", "provider": {"@type": "Organization", "name": "[DIRECTORY NAME]"}}],
+ "faq": "assist", "band": false}
+-->
+{{crumbs}}
+<section class="hero">
+  <div class="container hero__grid">
+    <div>
+      <span class="pill">Assist</span>
+      <h1 style="margin-top:16px">We find the provider. <span class="serif-accent">You</span> sign.</h1>
+      <p class="hero__sub">One call, one brief, introductions to providers that accept your business model. Built for merchants that have been declined before.</p>
+      <div class="hero__ctas"><a class="btn btn--primary btn--lg" href="#book" data-cta="assist-hero-book">Book a call</a><a class="btn btn--ghost btn--lg" href="#how" data-cta="assist-hero-how">See how it works</a></div>
+    </div>
+    <div class="ph hero__art">Illustration: a brief turning into three provider intros</div>
+  </div>
+</section>
+<section class="section section--surface" id="how">
+  <div class="container">
+    <div class="section-head"><div><span class="pill pill--plain">Process</span><h2>Three steps</h2></div></div>
+    <div class="steps steps--3">
+      <div class="step"><h3>Intro call</h3><p>30 minutes on your model, markets, volume and history.</p></div>
+      <div class="step"><h3>Shortlist</h3><p>We brief providers that fit and confirm they will review you.</p></div>
+      <div class="step"><h3>Introductions</h3><p>Warm intros, then support through KYB and onboarding.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="section-head"><div><h2>What is included</h2></div></div>
+    <div class="grid grid--4">
+      <div class="card"><h3>Dedicated manager</h3><p>One contact from brief to go-live.</p></div>
+      <div class="card"><h3>Verified providers only</h3><p>Every intro is to a verified profile.</p></div>
+      <div class="card"><h3>KYB support</h3><p>Checklists and document review per industry.</p></div>
+      <div class="card"><h3>Status reports</h3><p>Where each application stands, on request.</p></div>
+    </div>
+    <div class="price-card price-card--featured" style="margin-top:32px;max-width:520px">
+      <h3>Assist package</h3><div class="price">[PRICE]</div>
+      <ul class="checklist"><li>[N] provider introductions per request</li><li>Rate negotiation support</li><li>KYB document review</li></ul>
+      <a class="btn btn--primary btn--block" href="#book" data-cta="assist-package">Book a call</a>
+    </div>
+    <span class="wf-note"><b>Pricing.</b> PayAtlas shows "On Request" and "3+ guaranteed solutions". We do not promise outcomes we cannot control. Price and commission disclosure must be confirmed before launch.</span>
+  </div>
+</section>
+<section class="section section--surface"><div class="container"><div class="section-head"><div><h2>Assist FAQ</h2></div></div>{{faq:assist}}</div></section>
+<section class="section" id="book">
+  <div class="container" style="max-width:640px">
+    <h2>Book a call</h2>
+    <form data-wf-form="stay">
+      <div class="field"><label for="a-name">Name</label><input class="input" id="a-name" required></div>
+      <div class="field"><label for="a-email">Work email</label><input class="input" id="a-email" type="email" required></div>
+      <div class="field"><label for="a-site">Company website</label><input class="input" id="a-site"></div>
+      <div class="field"><label for="a-need">What do you need?</label><textarea class="input" id="a-need" rows="4"></textarea></div>
+      <button class="btn btn--primary btn--lg" data-cta="assist-submit">Request a call</button>
+      <p class="small" data-form-msg hidden>Wireframe: form does not submit.</p>
+    </form>
+  </div>
+</section>

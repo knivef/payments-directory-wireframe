@@ -1,0 +1,28 @@
+{
+  "_note": "Single source for on-page FAQ and FAQPage JSON-LD. render.py emits both from here.",
+  "home": [
+    {"q": "Is the directory free to use?", "a": "Yes. Searching, filtering, comparing and reading guides is free. You only pay if you choose the Assist matching service."},
+    {"q": "How do you decide the order of providers?", "a": "Default order is by profile completeness and verified data. Paid placements are always labelled. The full method is on the How we rank page."},
+    {"q": "Who owns [DIRECTORY NAME]?", "a": "[OWNERSHIP STATEMENT, to be confirmed before launch]."},
+    {"q": "Can you guarantee a merchant account?", "a": "No. Approval is always the provider's decision. We help you reach providers that fit your profile."}
+  ],
+  "category": [
+    {"q": "What does a card processing provider do?", "a": "It connects your checkout to the card networks, authorises transactions and settles funds to your account, either directly or through an acquiring bank."},
+    {"q": "How do I compare card processing fees?", "a": "Ask every provider for the same pricing model, usually interchange plus or blended, and compare on your real ticket size and card mix rather than headline rates."},
+    {"q": "Which providers accept higher risk merchants?", "a": "Use the Industry filter on this page. Profiles list the industries each provider says it supports."}
+  ],
+  "compare": [
+    {"q": "Which is better, Provider Alpha or Provider Beta?", "a": "It depends on where you sell. Provider Alpha covers more countries; Provider Beta has deeper local method support in Brazil."},
+    {"q": "Can I use both providers at once?", "a": "Yes, many merchants route by country or method through an orchestration layer."}
+  ],
+  "assist": [
+    {"q": "How does Assist work?", "a": "A short intro call, a written brief about your business, then introductions to providers that fit. You talk to them directly."},
+    {"q": "How much does Assist cost?", "a": "[ASSIST PRICING, to be confirmed]."},
+    {"q": "Do you take a commission from providers?", "a": "[COMMISSION DISCLOSURE, to be confirmed]."}
+  ],
+  "providers": [
+    {"q": "Is a profile free?", "a": "Yes. The free profile includes your description, services, coverage and a verified badge once we confirm your details."},
+    {"q": "How do you verify a company?", "a": "We check company registration, licences where relevant and a working contact at the company domain."},
+    {"q": "Can I pay to rank higher?", "a": "Featured placements exist and are always labelled as such. They never change the default order."}
+  ]
+}

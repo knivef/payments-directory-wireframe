@@ -1,0 +1,21 @@
+<!--meta
+{"route": "/events/", "title": "Payments Events and Conferences [YEAR] · [DIRECTORY NAME]",
+ "description": "Upcoming payments, fintech and iGaming conferences worldwide. Dates, cities and who attends.",
+ "crumbs": [["Home", "/"], ["Events", null]],
+ "jsonld": [{"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@type": "Event", "name": "[Event name]", "startDate": "[DATE]", "location": {"@type": "Place", "name": "[Venue]", "address": "[City, Country]"}}}]}]}
+-->
+{{crumbs}}
+<section class="section--tight">
+  <div class="container">
+    <div class="section-head"><div><h1 style="font-size:clamp(32px,5vw,48px)">Payments events</h1><p>Conferences and expos worldwide, sorted by date.</p></div><a class="btn btn--ghost" href="/hub/" data-cta="events-submit">Submit an event</a></div>
+    <div class="tabs" role="tablist" data-tabs><button role="tab" aria-selected="true" aria-controls="ev-up">Upcoming</button><button role="tab" aria-selected="false" aria-controls="ev-past">Past</button></div>
+    <div id="ev-up" class="tab-panel"><h2 class="sr-only">Upcoming events</h2><div class="grid grid--2">
+      <a class="event" href="/events/"><span class="event__date">Nov<strong>[DD]</strong></span><span><strong>[Event name]</strong><br><span class="muted small">[City, Country] · [Topic]</span></span></a>
+      <a class="event" href="/events/"><span class="event__date">Nov<strong>[DD]</strong></span><span><strong>[Event name]</strong><br><span class="muted small">[City, Country] · [Topic]</span></span></a>
+      <a class="event" href="/events/"><span class="event__date">Dec<strong>[DD]</strong></span><span><strong>[Event name]</strong><br><span class="muted small">[City, Country] · [Topic]</span></span></a>
+      <a class="event" href="/events/"><span class="event__date">Jan<strong>[DD]</strong></span><span><strong>[Event name]</strong><br><span class="muted small">[City, Country] · [Topic]</span></span></a>
+    </div></div>
+    <div id="ev-past" class="tab-panel" hidden><h2 class="sr-only">Past events</h2><p class="muted">Past events stay indexed with a recap link, or 301 to the next edition.</p></div>
+    <span class="wf-note"><b>Events.</b> PayAtlas indexes 101 event pages, including expired ones. Ours: Event schema per item, past events redirect to the next edition.</span>
+  </div>
+</section>

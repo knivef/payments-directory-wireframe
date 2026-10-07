@@ -1,0 +1,132 @@
+<!--meta
+{"route": "/", "title": "[DIRECTORY NAME]: Find and Compare Payment Providers",
+ "description": "Compare [N] payment providers by service, country and industry. Free to search, with match help when you need it.",
+ "jsonld": [
+  {"@type": "Organization", "name": "[DIRECTORY NAME]", "url": "{url}", "logo": "https://example.com/logo.png"},
+  {"@type": "WebSite", "name": "[DIRECTORY NAME]", "url": "{url}", "potentialAction": {"@type": "SearchAction", "target": "https://example.com/providers/?q={search_term_string}", "query-input": "required name=search_term_string"}}
+ ],
+ "faq": "home"}
+-->
+<section class="hero">
+  <div class="container hero__grid">
+    <div>
+      <a class="pill" href="/countries/">New · Country payment guides</a>
+      <h1 style="margin-top:16px">Find the payment provider that <span class="serif-accent">fits</span></h1>
+      <p class="hero__sub">Search [N] PSPs, acquirers and payment tools by what you sell, where you sell and how your customers pay.</p>
+      <form class="search" role="search" data-wf-form="/providers/"><label class="sr-only" for="hero-q">Search providers</label><input id="hero-q" placeholder="Try card processing, Pix, iGaming, Brazil"><button class="btn btn--primary" data-cta="hero-search">Search</button></form>
+      <div class="hero__ctas"><a class="btn btn--primary btn--lg" href="/match/" data-cta="hero-match">Find a provider match</a><a class="btn btn--ghost btn--lg" href="/providers/" data-cta="hero-browse">Browse the directory</a></div>
+      <span class="wf-note"><b>Hero.</b> PayAtlas uses two CTAs and no search box. We add search because most visitors arrive with a specific service or country in mind. One serif italic accent word in the H1 (their pattern). H1 states the job, not a slogan.</span>
+    </div>
+    <div class="ph hero__art">Product collage: 3 floating provider cards (logo, rating, coverage chips) over a world map</div>
+  </div>
+</section>
+
+<section class="section--tight">
+  <div class="container">
+    <h2 class="sr-only">Directory at a glance</h2>
+    <div class="stats">
+      <div><strong>[N]</strong><span>payment providers · +[N] this month</span></div>
+      <div><strong>[N]</strong><span>payment methods mapped</span></div>
+      <div><strong>[N]</strong><span>countries covered</span></div>
+      <div><strong>[N]</strong><span>industry guides</span></div>
+    </div>
+    <span class="wf-note"><b>Stats strip.</b> Live counts from the database, never typed. "+N this month" is a freshness signal. PayAtlas marks this block as an H2 reading "Statisic"; ours is a visually hidden H2.</span>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><div><span class="pill pill--plain">Directory</span><h2>Browse by what you need</h2></div><a class="btn btn--ghost btn--sm" href="/for-providers/" data-cta="home-submit">Submit your company</a></div>
+    {{category_cards}}
+  </div>
+</section>
+
+<section class="section section--surface">
+  <div class="container">
+    <div class="section-head"><div><span class="pill pill--plain">Fresh</span><h2>Recently added</h2></div><a class="btn btn--ghost btn--sm" href="/providers/?sort=newest">View all</a></div>
+    {{recent_cards}}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><div><span class="pill pill--plain">Guides</span><h2>Accept payments anywhere</h2><p>Methods, rules and providers for each market.</p></div><a class="btn btn--ghost btn--sm" href="/countries/">All countries</a></div>
+    {{region_cards}}
+    <div class="section-head" style="margin-top:48px"><div><h3 style="font-size:24px">By industry</h3></div><a class="btn btn--ghost btn--sm" href="/industries/igaming/">All industries</a></div>
+    {{industry_cards}}
+    <span class="wf-note"><b>Knowledge base.</b> Region cards use photography in production. These carousels are the main internal links from home into the programmatic guide layer.</span>
+  </div>
+</section>
+
+<section class="section section--surface">
+  <div class="container">
+    <div class="section-head"><div><span class="pill pill--plain">How it works</span><h2>From shortlist to signed in six steps</h2></div></div>
+    <div class="tabs" role="tablist" data-tabs>
+      <button role="tab" aria-selected="true" aria-controls="hw-merchants">For merchants</button>
+      <button role="tab" aria-selected="false" aria-controls="hw-providers">For providers</button>
+    </div>
+    <div id="hw-merchants" class="tab-panel"><div class="steps steps--6">
+      <div class="step"><h3>Explore</h3><p>Browse by service, country or industry.</p></div>
+      <div class="step"><h3>Shortlist</h3><p>Filter on methods, coverage and verified data.</p></div>
+      <div class="step"><h3>Compare</h3><p>Side by side on coverage and features.</p></div>
+      <div class="step"><h3>Connect</h3><p>Request an intro in one click.</p></div>
+      <div class="step"><h3>Onboard</h3><p>Use our KYB checklists per industry.</p></div>
+      <div class="step"><h3>Review</h3><p>Rate the provider for the next merchant.</p></div>
+    </div></div>
+    <div id="hw-providers" class="tab-panel" hidden><div class="steps steps--6">
+      <div class="step"><h3>Claim</h3><p>Claim or create your profile.</p></div>
+      <div class="step"><h3>Verify</h3><p>We confirm registration and licences.</p></div>
+      <div class="step"><h3>Complete</h3><p>Add services, coverage and methods.</p></div>
+      <div class="step"><h3>Appear</h3><p>Show up in category and country pages.</p></div>
+      <div class="step"><h3>Receive</h3><p>Get intro requests from merchants.</p></div>
+      <div class="step"><h3>Respond</h3><p>Reply to reviews publicly.</p></div>
+    </div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div class="card card--surface"><h3>For merchants</h3><ul class="checklist"><li>Free search across [N] providers</li><li>Coverage, methods and industries upfront</li><li>Reviews from verified merchants</li><li>Human help when you want it</li></ul><a class="btn btn--primary" href="/match/" data-cta="benefit-merchant">Find my provider</a></div>
+    <div class="card card--surface"><h3>For providers</h3><ul class="checklist"><li>Free profile with verified badge</li><li>Listed on every relevant category and country page</li><li>Intro requests from qualified merchants</li><li>Reply to reviews and questions</li></ul><a class="btn btn--ghost" href="/for-providers/" data-cta="benefit-provider">List your company</a></div>
+  </div>
+</section>
+
+<section class="section section--surface">
+  <div class="container">
+    <div class="section-head"><div><span class="pill pill--plain">Proof</span><h2>[PROOF HEADLINE once we have real customers]</h2></div></div>
+    <div class="grid grid--3"><div class="ph" style="min-height:140px">[CASE STUDY 1: verified quote, name, company]</div><div class="ph" style="min-height:140px">[CASE STUDY 2]</div><div class="ph" style="min-height:140px">[CASE STUDY 3]</div></div>
+    <span class="wf-note"><b>Proof.</b> PayAtlas claims "400+ companies". House rule: delete this section rather than ship placeholder figures or quotes.</span>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><div><span class="pill pill--plain">Journal</span><h2>Latest from the journal</h2></div><a class="btn btn--ghost btn--sm" href="/journal/sample-guide/">View all</a></div>
+    <div class="grid grid--3">
+      <a class="card" href="/journal/sample-guide/"><div class="ph" style="aspect-ratio:16/9;margin-bottom:12px">Image</div><h3>[Article headline 1]</h3><p class="small">[Date] · [N] min read</p></a>
+      <a class="card" href="/journal/sample-guide/"><div class="ph" style="aspect-ratio:16/9;margin-bottom:12px">Image</div><h3>[Article headline 2]</h3><p class="small">[Date] · [N] min read</p></a>
+      <a class="card" href="/journal/sample-guide/"><div class="ph" style="aspect-ratio:16/9;margin-bottom:12px">Image</div><h3>[Article headline 3]</h3><p class="small">[Date] · [N] min read</p></a>
+    </div>
+    <div class="section-head" style="margin-top:48px"><div><h3 style="font-size:24px">Upcoming events</h3></div><a class="btn btn--ghost btn--sm" href="/events/">All events</a></div>
+    <div class="grid grid--2">
+      <a class="event" href="/events/"><span class="event__date">Nov<strong>[DD]</strong></span><span><strong>[Event name]</strong><br><span class="muted small">[City, Country]</span></span></a>
+      <a class="event" href="/events/"><span class="event__date">Dec<strong>[DD]</strong></span><span><strong>[Event name]</strong><br><span class="muted small">[City, Country]</span></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--surface">
+  <div class="container">
+    <div class="section-head"><div><span class="pill pill--plain">FAQ</span><h2>Questions merchants ask</h2></div></div>
+    {{faq:home}}
+    <span class="wf-note"><b>FAQ.</b> Rendered from data/faqs.json. The same entries generate the FAQPage JSON-LD in the head. Ownership and "no guarantee" answers address the trust gaps PayAtlas leaves open.</span>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><div><span class="pill pill--plain">Platform map</span><h2>Every service we cover</h2></div></div>
+    {{platform_map}}
+    <span class="wf-note"><b>Platform map.</b> A full link grid into every service category page. Unlike PayAtlas, each link is a crawlable path, not a blocked query string.</span>
+  </div>
+</section>

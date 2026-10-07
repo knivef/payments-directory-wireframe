@@ -1,0 +1,32 @@
+{
+  "_note": "Service taxonomy for the wireframe. Broad PSP scope. Counts are placeholders, not data.",
+  "categories": [
+    {"slug": "merchant-services", "name": "Merchant services", "icon": "card", "blurb": "Companies that accept, process and settle payments: cards, wallets, local methods, crypto, subscriptions.",
+     "services": ["Card processing", "Merchant accounts", "Acquiring", "Alternative payment methods", "Crypto payments", "Buy now, pay later", "Subscriptions and billing", "Payouts", "Real-time payments", "Invoicing"]},
+    {"slug": "payment-technology", "name": "Payment technology", "icon": "chip", "blurb": "Infrastructure that sits around processing: orchestration, fraud, identity, security and reconciliation.",
+     "services": ["Payment orchestration", "Fraud prevention", "AML and KYC", "3D Secure", "Tokenisation", "Reconciliation", "PCI DSS compliance", "Open banking", "White label platforms"]},
+    {"slug": "business-support", "name": "Business support", "icon": "brief", "blurb": "Firms that keep payment businesses licensed, staffed, insured and audited.",
+     "services": ["Legal", "Compliance and licensing", "Consulting", "Merchant onboarding", "IBAN accounts", "Accounting", "Insurance"]},
+    {"slug": "money-movement", "name": "Money movement", "icon": "swap", "blurb": "Companies that hold, convert and move money across borders for businesses and consumers.",
+     "services": ["Currency exchange", "Digital wallets", "Card issuing", "Embedded finance", "Remittance", "Neobanks", "Cross-border platforms"]},
+    {"slug": "build-partners", "name": "Build partners", "icon": "code", "blurb": "Teams that build payment products: software, e-commerce, blockchain and growth.",
+     "services": ["Software development", "E-commerce development", "Blockchain development", "Marketing for fintech"]}
+  ],
+  "regions": ["North America", "Latin America", "Europe", "Middle East and North Africa", "Sub-Saharan Africa", "South Asia", "East Asia", "South-East Asia", "Oceania"],
+  "countries_sample": [
+    {"name": "Brazil", "region": "Latin America"}, {"name": "Mexico", "region": "Latin America"}, {"name": "United Kingdom", "region": "Europe"},
+    {"name": "Germany", "region": "Europe"}, {"name": "United Arab Emirates", "region": "Middle East and North Africa"}, {"name": "Nigeria", "region": "Sub-Saharan Africa"},
+    {"name": "India", "region": "South Asia"}, {"name": "Indonesia", "region": "South-East Asia"}, {"name": "Japan", "region": "East Asia"},
+    {"name": "United States", "region": "North America"}, {"name": "Canada", "region": "North America"}, {"name": "Australia", "region": "Oceania"}
+  ],
+  "industries": ["iGaming", "Crypto and Web3", "Digital goods and SaaS", "E-commerce and retail", "Travel and hospitality", "Marketplaces", "Financial services", "Health and nutra", "Adult", "Education", "Events and ticketing", "Gaming"],
+  "payment_methods": ["Visa", "Mastercard", "Pix", "UPI", "SEPA Instant", "Apple Pay", "Google Pay", "PayPal", "iDEAL", "Boleto", "M-Pesa", "USDC", "USDT", "Klarna"],
+  "guides": [
+    {"name": "Country guides", "href": "/countries/", "blurb": "How to accept payments in each market"},
+    {"name": "Industry guides", "href": "/industries/igaming/", "blurb": "Risk, methods and providers by vertical"},
+    {"name": "Payment methods", "href": "/payment-methods/pix/", "blurb": "Coverage and adoption per method"},
+    {"name": "Regulators", "href": "/glossary/3ds/", "blurb": "Licensing bodies and what they require"},
+    {"name": "MCC codes", "href": "/mcc/5967/", "blurb": "Merchant category codes with risk notes"},
+    {"name": "Glossary", "href": "/glossary/3ds/", "blurb": "Payments terms, A to Z"}
+  ]
+}

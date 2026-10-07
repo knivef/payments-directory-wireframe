@@ -1,0 +1,13 @@
+{
+  "_note": "Fictional sample records. Names are deliberately generic. No real company data.",
+  "providers": [
+    {"slug": "provider-alpha", "name": "Provider Alpha", "initials": "PA", "hq": "United Kingdom", "domain": "provider-alpha.example", "services": ["Card processing", "Payment orchestration", "Payouts"], "blurb": "Card acquiring and payouts for online merchants in Europe and Latin America.", "rating": "4.6", "reviews": 12, "verified": true},
+    {"slug": "provider-beta", "name": "Provider Beta", "initials": "PB", "hq": "Brazil", "domain": "provider-beta.example", "services": ["Alternative payment methods", "Pix", "Payouts"], "blurb": "Local methods for Brazil and Mexico, including instant bank transfers.", "rating": "4.2", "reviews": 7, "verified": true},
+    {"slug": "provider-gamma", "name": "Provider Gamma", "initials": "PG", "hq": "Singapore", "domain": "provider-gamma.example", "services": ["Crypto payments", "Payouts"], "blurb": "Stablecoin acceptance and settlement for cross-border merchants.", "rating": "4.4", "reviews": 5, "verified": false},
+    {"slug": "provider-delta", "name": "Provider Delta", "initials": "PD", "hq": "Germany", "domain": "provider-delta.example", "services": ["Fraud prevention", "3D Secure"], "blurb": "Risk scoring and authentication for card-not-present traffic.", "rating": "4.8", "reviews": 21, "verified": true},
+    {"slug": "provider-epsilon", "name": "Provider Epsilon", "initials": "PE", "hq": "United States", "domain": "provider-epsilon.example", "services": ["Merchant accounts", "Card processing"], "blurb": "Merchant accounts for higher risk verticals in North America.", "rating": "3.9", "reviews": 9, "verified": false},
+    {"slug": "provider-zeta", "name": "Provider Zeta", "initials": "PZ", "hq": "United Arab Emirates", "domain": "provider-zeta.example", "services": ["Acquiring", "Card processing"], "blurb": "Regional acquiring across the Gulf with local settlement.", "rating": "4.1", "reviews": 4, "verified": true},
+    {"slug": "provider-eta", "name": "Provider Eta", "initials": "PH", "hq": "India", "domain": "provider-eta.example", "services": ["UPI", "Payouts", "Subscriptions and billing"], "blurb": "UPI collections, recurring mandates and payouts for Indian businesses.", "rating": "4.3", "reviews": 6, "verified": true},
+    {"slug": "provider-theta", "name": "Provider Theta", "initials": "PT", "hq": "Nigeria", "domain": "provider-theta.example", "services": ["Alternative payment methods", "Mobile money"], "blurb": "Card, bank and mobile money collections across West Africa.", "rating": "4.0", "reviews": 3, "verified": false}
+  ]
+}

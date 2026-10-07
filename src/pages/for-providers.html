@@ -1,0 +1,53 @@
+<!--meta
+{"route": "/for-providers/", "title": "List Your Payment Company · [DIRECTORY NAME]",
+ "description": "Create a free profile, get verified and receive intro requests from merchants searching for your services, countries and industries.",
+ "crumbs": [["Home", "/"], ["For providers", null]],
+ "jsonld": [{"@type": "Service", "name": "Provider listing", "offers": [{"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Plus", "description": "[PLUS PRICE]"}]}],
+ "faq": "providers", "band": false}
+-->
+{{crumbs}}
+<section class="hero">
+  <div class="container hero__grid">
+    <div>
+      <span class="pill">For providers</span>
+      <h1 style="margin-top:16px">Get found by merchants <span class="serif-accent">already</span> looking for you</h1>
+      <p class="hero__sub">Merchants search by service, country and industry. A complete, verified profile puts you on every page that matches.</p>
+      <div class="hero__ctas"><a class="btn btn--primary btn--lg" href="#pricing" data-cta="prov-hero-free">Create free profile</a><a class="btn btn--ghost btn--lg" href="#contact" data-cta="prov-hero-sales">Talk to sales</a></div>
+    </div>
+    <div class="ph hero__art">Profile editor screenshot</div>
+  </div>
+</section>
+<section class="section section--surface">
+  <div class="container">
+    <div class="section-head"><div><h2>Live in three steps</h2></div></div>
+    <div class="steps steps--3">
+      <div class="step"><h3>Claim or create</h3><p>Find your company or add it. Verify with a company domain email.</p></div>
+      <div class="step"><h3>Complete</h3><p>Services, countries, industries, methods, licences.</p></div>
+      <div class="step"><h3>Get verified</h3><p>We check registration and licences, then add the badge.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="pricing">
+  <div class="container">
+    <div class="section-head"><div><span class="pill pill--plain">Pricing</span><h2>Start free</h2></div></div>
+    <div class="grid grid--2">
+      <div class="price-card"><h3>Free</h3><div class="price">$0</div><ul class="checklist"><li>Full company profile</li><li>Verified badge after checks</li><li>Listed on category, country and industry pages</li><li>Reply to reviews</li></ul><a class="btn btn--primary btn--block" href="/hub/" data-cta="prov-free">Create free profile</a></div>
+      <div class="price-card price-card--featured"><h3>Plus</h3><div class="price">[PRICE]</div><ul class="checklist"><li>Everything in Free</li><li>Labelled featured placement in [N] categories</li><li>Merchant request inbox</li><li>Profile analytics</li></ul><a class="btn btn--ghost btn--block" href="#contact" data-cta="prov-plus">Talk to sales</a></div>
+    </div>
+    <span class="wf-note"><b>Monetisation.</b> PayAtlas Plus is "Soon". Decide our paid tier before build: it changes the listing UI (featured rows) and the How we rank page.</span>
+  </div>
+</section>
+<section class="section section--surface" id="badges">
+  <div class="container split">
+    <div><h2>Trust badges</h2><p class="muted">Verified providers can embed a badge linking to their profile. Every embed is a backlink.</p></div>
+    <div class="ph" style="min-height:140px">Badge previews, light and dark, with copy-to-clipboard snippet</div>
+  </div>
+</section>
+<section class="section"><div class="container"><div class="section-head"><div><h2>Provider FAQ</h2></div></div>{{faq:providers}}</div></section>
+<section class="section section--surface" id="contact">
+  <div class="container" style="max-width:640px"><h2>Talk to sales</h2>
+    <form data-wf-form="stay"><div class="field"><label for="p-email">Work email</label><input class="input" id="p-email" type="email" required></div>
+    <div class="field"><label for="p-co">Company</label><input class="input" id="p-co"></div>
+    <button class="btn btn--primary" data-cta="prov-sales-submit">Send</button><p class="small" data-form-msg hidden>Wireframe: form does not submit.</p></form>
+  </div>
+</section>

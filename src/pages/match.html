@@ -1,0 +1,35 @@
+<!--meta
+{"route": "/match/", "title": "Find a Payment Provider in 4 Steps · [DIRECTORY NAME]",
+ "description": "Answer four questions about your industry, country, currencies and payment methods. Get a shortlist of providers that fit.",
+ "crumbs": [["Home", "/"], ["Match tool", null]],
+ "jsonld": [{"@type": "WebApplication", "name": "Provider match tool", "applicationCategory": "BusinessApplication", "url": "{url}", "offers": {"@type": "Offer", "price": "0"}}],
+ "band": false}
+-->
+{{crumbs}}
+<section class="section--tight">
+  <div class="container" style="max-width:760px">
+    <h1 style="font-size:clamp(32px,5vw,48px)">Tell us about your business</h1>
+    <p class="muted">Four questions. You get a shortlist instantly, no sign up needed.</p>
+    <form data-stepper data-wf-form="/providers/">
+      <div class="progress" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <fieldset data-step><legend>1. What do you sell?</legend>
+        <div class="chips">
+          <label><input type="radio" name="ind"> iGaming</label><label><input type="radio" name="ind"> Crypto and Web3</label><label><input type="radio" name="ind"> Digital goods and SaaS</label><label><input type="radio" name="ind"> E-commerce and retail</label><label><input type="radio" name="ind"> Travel</label><label><input type="radio" name="ind"> Marketplaces</label><label><input type="radio" name="ind"> Other</label>
+        </div></fieldset>
+      <fieldset data-step><legend>2. Where is your company registered?</legend>
+        <div class="field"><label for="m-country">Country of incorporation</label><select class="input" id="m-country"><option>Select a country</option><option>United Kingdom</option><option>Brazil</option><option>United States</option></select></div>
+        <div class="field"><label for="m-markets">Where are your customers?</label><input class="input" id="m-markets" placeholder="Add countries or regions"></div></fieldset>
+      <fieldset data-step><legend>3. Which currencies do you settle in?</legend>
+        <div class="chips"><label><input type="checkbox"> USD</label><label><input type="checkbox"> EUR</label><label><input type="checkbox"> GBP</label><label><input type="checkbox"> BRL</label><label><input type="checkbox"> USDC</label><label><input type="checkbox"> USDT</label></div></fieldset>
+      <fieldset data-step><legend>4. Which payment methods do you need?</legend>
+        <div class="chips"><label><input type="checkbox"> Cards</label><label><input type="checkbox"> Apple Pay, Google Pay</label><label><input type="checkbox"> Pix</label><label><input type="checkbox"> UPI</label><label><input type="checkbox"> SEPA</label><label><input type="checkbox"> Crypto</label><label><input type="checkbox"> BNPL</label></div>
+        <div class="field" style="margin-top:16px"><label for="m-vol">Monthly volume (optional)</label><select class="input" id="m-vol"><option>Prefer not to say</option><option>Under 50k</option><option>50k to 500k</option><option>500k to 5M</option><option>Over 5M</option></select></div></fieldset>
+      <div style="display:flex;gap:8px;justify-content:space-between">
+        <button type="button" class="btn btn--ghost" data-prev>Back</button>
+        <span style="display:flex;gap:8px"><button type="button" class="btn btn--ghost" data-next>Next</button><button class="btn btn--primary" data-cta="match-submit">Find providers</button></span>
+      </div>
+    </form>
+    <span class="wf-note"><b>Match tool.</b> Mirrors PayAtlas Navigator (industry, incorporation, currencies, methods). We add target markets and an optional volume band. Results show without sign-up; email capture is offered to save or send the shortlist. Results URLs are noindex.</span>
+    <div class="cta-inline" style="margin-top:24px"><div><h2 style="font-size:22px;font-family:var(--font-sans);font-weight:600">Prefer a human?</h2><p class="small">Our team will shortlist providers and make the intros.</p></div><a class="btn btn--primary" href="/assist/" data-cta="match-assist">Talk to Assist</a></div>
+  </div>
+</section>

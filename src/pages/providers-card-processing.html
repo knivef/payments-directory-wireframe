@@ -1,0 +1,53 @@
+<!--meta
+{"route": "/providers/card-processing/", "title": "Best Card Processing Providers in [YEAR] · [DIRECTORY NAME]",
+ "description": "Compare [N] card processing providers. Coverage, pricing model, supported industries and real reviews, updated [MONTH].",
+ "crumbs": [["Home", "/"], ["Providers", "/providers/"], ["Merchant services", "/providers/?category=merchant-services"], ["Card processing", null]],
+ "jsonld": [{"@type": "CollectionPage", "name": "Card processing providers", "url": "{url}"},
+            {"@type": "ItemList", "numberOfItems": 8, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://example.com/provider/provider-alpha/"}]}],
+ "faq": "category"}
+-->
+{{crumbs}}
+<section class="section--tight">
+  <div class="container">
+    <span class="pill">Merchant services</span>
+    <h1 style="font-size:clamp(32px,5vw,52px);margin-top:12px">Card processing providers</h1>
+    <p class="hero__sub">[N] providers that connect your checkout to Visa, Mastercard and local card schemes. Filter by country, industry and pricing model.</p>
+    <div class="hero__ctas" style="margin-top:16px"><a class="btn btn--primary" href="/match/" data-cta="cat-match">Get matched for card processing</a><a class="btn btn--ghost" href="/compare/" data-cta="cat-compare">Compare top providers</a></div>
+    <span class="wf-note"><b>Our biggest SEO gain.</b> PayAtlas only offers this as /atlas?services=card-processing, which its robots.txt blocks. We give each of about 70 services a real, indexable page with a unique intro, list, buyer guide and FAQ. Phase 2 adds /providers/{service}/{country}/ once a combination has 5 or more providers.</span>
+  </div>
+</section>
+<section class="section--tight">
+  <div class="container listing">
+    <div>
+      <button class="btn btn--ghost btn--block filters-toggle" data-toggle="filters" aria-expanded="false">Filters</button>
+      <aside class="filters" id="filters" aria-label="Filters">{{facets}}</aside>
+    </div>
+    <div>
+      <h2 class="sr-only">Results</h2><div class="results-head"><strong>[N] card processing providers</strong><label class="small">Sort <select aria-label="Sort"><option>Most complete</option><option>Highest rated</option></select></label></div>
+      {{provider_rows:5}}
+      <div style="text-align:center;margin-top:24px"><a class="btn btn--ghost" href="/providers/">See all [N]</a></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container two-col">
+    <article class="article">
+      <h2 style="margin-top:0">How to choose a card processing provider</h2>
+      <p>[Buyer guide intro, 80 to 120 words. Written by a named author, reviewed by a payments specialist.]</p>
+      <h3>Pricing models</h3><p>[Interchange plus versus blended, with a worked example on a real ticket size.]</p>
+      <h3>Coverage and settlement</h3><p>[Local acquiring versus cross-border, settlement currencies, payout timing.]</p>
+      <h3>Industry fit</h3><p>[Which verticals need specialist processors and why.]</p>
+      <div class="table-wrap" style="margin:24px 0"><table><thead><tr><th>Question to ask</th><th>Why it matters</th></tr></thead><tbody>
+        <tr><td>Do you acquire locally in my markets?</td><td>Local acquiring usually lifts approval rates.</td></tr>
+        <tr><td>What is the rolling reserve?</td><td>Affects cash flow for higher risk merchants.</td></tr>
+        <tr><td>Which MCCs do you accept?</td><td>Some processors exclude whole categories.</td></tr></tbody></table></div>
+      <h2>Card processing FAQ</h2>
+      {{faq:category}}
+    </article>
+    <aside>
+      <div class="aside-card"><h3>Related services</h3><a class="tag" href="/providers/card-processing/?s=acquiring">Acquiring</a><a class="tag" href="/providers/card-processing/?s=merchant-accounts">Merchant accounts</a><a class="tag" href="/providers/card-processing/?s=payment-orchestration">Orchestration</a><a class="tag" href="/providers/card-processing/?s=3d-secure">3D Secure</a></div>
+      <div class="aside-card"><h3>Popular comparisons</h3><p><a class="link" href="/compare/provider-alpha-vs-provider-beta/">Provider Alpha vs Provider Beta</a></p><p><a class="link" href="/compare/provider-alpha-vs-provider-beta/">Provider Alpha vs Provider Epsilon</a></p></div>
+      <div class="aside-card"><h3>Guides</h3><p><a class="link" href="/glossary/3ds/">What is 3D Secure?</a></p><p><a class="link" href="/mcc/5967/">MCC 5967 explained</a></p></div>
+    </aside>
+  </div>
+</section>

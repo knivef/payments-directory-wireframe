@@ -1,0 +1,38 @@
+<!--meta
+{"route": "/compare/provider-alpha-vs-provider-beta/", "title": "Provider Alpha vs Provider Beta: Coverage & Features Compared",
+ "description": "Provider Alpha covers more countries, Provider Beta has deeper local methods in Brazil. Full side-by-side comparison of coverage, features and reviews.",
+ "crumbs": [["Home", "/"], ["Compare", "/compare/"], ["Provider Alpha vs Provider Beta", null]],
+ "jsonld": [{"@type": "WebPage", "name": "Provider Alpha vs Provider Beta", "url": "{url}"},
+            {"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://example.com/provider/provider-alpha/"}, {"@type": "ListItem", "position": 2, "url": "https://example.com/provider/provider-beta/"}]}],
+ "faq": "compare"}
+-->
+{{crumbs}}
+<section class="section--tight">
+  <div class="container" style="text-align:center">
+    <div class="vs"><span class="logo-tile logo-tile--lg">PA</span><span class="vs__badge">VS</span><span class="logo-tile logo-tile--lg">PB</span></div>
+    <h1 style="font-size:clamp(32px,5vw,52px)">Provider Alpha vs Provider Beta</h1>
+    <p class="muted">Side by side on coverage, payment methods, features and merchant reviews.</p>
+  </div>
+  <div class="container"><div class="verdict"><span><strong>Short answer:</strong> Provider Alpha covers more countries and settlement currencies. Provider Beta is stronger if most of your volume is in Brazil and you need Pix and Boleto.</span><a class="link" href="#summary">Read the summary</a></div>
+  <span class="wf-note"><b>Verdict.</b> Generated from the data, then editor reviewed. It doubles as the meta description (PayAtlas repeats the title there). House rule: the table must show at least one row each provider wins or ties.</span></div>
+</section>
+<div class="sticky-tabs"><div class="container"><nav class="tabs" aria-label="Comparison sections"><a href="#coverage" class="is-active">Coverage</a><a href="#features">Features</a><a href="#reviews">Reviews</a><a href="#summary">Summary</a><a href="#alternatives">Alternatives</a><a href="#faq">FAQ</a></nav></div></div>
+<div class="container">
+  <section class="block" id="coverage"><h2>Coverage</h2>
+    <div class="table-wrap"><table><thead><tr><th scope="col">Criteria</th><th scope="col">Provider Alpha</th><th scope="col">Provider Beta</th></tr></thead><tbody>
+      <tr><td>Regions</td><td>Europe, Latin America</td><td>Latin America</td></tr>
+      <tr><td>Countries</td><td>[N]</td><td>[N]</td></tr>
+      <tr><td>Settlement currencies</td><td>[N]</td><td>[N]</td></tr>
+      <tr><td>Local acquiring in Brazil</td><td>No</td><td>Yes</td></tr></tbody></table></div>
+    <div class="grid grid--2" style="margin-top:16px"><div class="ph" style="aspect-ratio:2/1">Coverage map A</div><div class="ph" style="aspect-ratio:2/1">Coverage map B</div></div></section>
+  <section class="block" id="features"><h2>Payment methods and features</h2>
+    <div class="table-wrap"><table><thead><tr><th scope="col">Feature</th><th scope="col">Provider Alpha</th><th scope="col">Provider Beta</th></tr></thead><tbody>
+      <tr><td>Cards</td><td>Yes</td><td>Yes</td></tr><tr><td>Pix</td><td>Yes</td><td>Yes</td></tr><tr><td>Boleto</td><td>No</td><td>Yes</td></tr>
+      <tr><td>Payouts</td><td>Yes</td><td>Yes</td></tr><tr><td>Orchestration</td><td>Yes</td><td>No</td></tr></tbody></table></div></section>
+  <section class="block" id="reviews"><h2>Reviews</h2><div class="split"><div class="card card--surface"><strong>Provider Alpha</strong><p class="stars">&#9733; 4.6 · 12 reviews</p></div><div class="card card--surface"><strong>Provider Beta</strong><p class="stars">&#9733; 4.2 · 7 reviews</p></div></div></section>
+  <section class="block" id="summary"><h2>Summary</h2>
+    <div class="split"><div class="card"><h3>Choose Provider Alpha if</h3><ul class="checklist"><li>You sell in Europe and Latin America</li><li>You want orchestration in the same contract</li></ul><button class="btn btn--primary" data-modal-open="auth" data-cta="cmp-intro-a">Request intro to Provider Alpha</button></div>
+    <div class="card"><h3>Choose Provider Beta if</h3><ul class="checklist"><li>Most volume is Brazilian</li><li>You need Boleto as well as Pix</li></ul><button class="btn btn--primary" data-modal-open="auth" data-cta="cmp-intro-b">Request intro to Provider Beta</button></div></div></section>
+  <section class="block" id="alternatives"><h2>Consider these alternatives</h2>{{alt_cards}}</section>
+  <section class="block" id="faq"><h2>Comparison FAQ</h2>{{faq:compare}}</section>
+</div>

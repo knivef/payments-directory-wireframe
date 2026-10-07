@@ -1,0 +1,38 @@
+<!--meta
+{"route": "/hub/", "title": "Wireframe hub · [DIRECTORY NAME]",
+ "description": "Index of every template in the payments directory wireframe.",
+ "crumbs": [["Home", "/"], ["Wireframe hub", null]], "band": false}
+-->
+{{crumbs}}
+<section class="section--tight">
+  <div class="container">
+    <h1 style="font-size:clamp(32px,5vw,48px)">Wireframe hub</h1>
+    <p class="hero__sub">Internal review build of a broad payments provider directory, benchmarked against PayAtlas. Every template below is clickable. Yellow notes explain decisions; toggle them with the button bottom right.</p>
+    <h2>Templates</h2>
+    <ul class="hub-list">
+      <li><a href="/"><strong>Home</strong><br><code>/</code></a></li>
+      <li><a href="/providers/"><strong>Directory listing</strong><br><code>/providers/</code></a></li>
+      <li><a href="/providers/card-processing/"><strong>Service category landing</strong><br><code>/providers/{service}/</code></a></li>
+      <li><a href="/provider/provider-alpha/"><strong>Provider profile</strong><br><code>/provider/{slug}/</code></a></li>
+      <li><a href="/compare/"><strong>Compare index</strong><br><code>/compare/</code></a></li>
+      <li><a href="/compare/provider-alpha-vs-provider-beta/"><strong>Compare pair</strong><br><code>/compare/{a}-vs-{b}/</code></a></li>
+      <li><a href="/match/"><strong>Match tool</strong><br><code>/match/</code></a></li>
+      <li><a href="/assist/"><strong>Assist (concierge)</strong><br><code>/assist/</code></a></li>
+      <li><a href="/for-providers/"><strong>Provider program and pricing</strong><br><code>/for-providers/</code></a></li>
+      <li><a href="/countries/"><strong>Country index</strong><br><code>/countries/</code></a></li>
+      <li><a href="/countries/brazil/"><strong>Country guide</strong><br><code>/countries/{country}/</code></a></li>
+      <li><a href="/industries/igaming/"><strong>Industry guide</strong><br><code>/industries/{vertical}/</code></a></li>
+      <li><a href="/payment-methods/pix/"><strong>Payment method</strong><br><code>/payment-methods/{slug}/</code></a></li>
+      <li><a href="/glossary/3ds/"><strong>Glossary term</strong><br><code>/glossary/{term}/</code></a></li>
+      <li><a href="/mcc/5967/"><strong>MCC code</strong><br><code>/mcc/{code}/</code></a></li>
+      <li><a href="/journal/sample-guide/"><strong>Journal article</strong><br><code>/journal/{slug}/</code></a></li>
+      <li><a href="/events/"><strong>Events</strong><br><code>/events/</code></a></li>
+      <li><a href="/404.html"><strong>404</strong><br><code>/404</code></a></li>
+    </ul>
+    <h2 style="margin-top:48px" id="how-we-rank">Pages not built in the wireframe</h2>
+    <p class="muted">About, How we rank, Ownership, Roadmap, Contact and legal pages link here. "How we rank" and "Ownership" are launch requirements: they answer the neutrality question PayAtlas leaves open.</p>
+    <p class="muted" id="ownership">Links to unbuilt entities (other services, countries, providers) open the sample page for that template, with the intended slug in the query string.</p>
+    <h2 style="margin-top:48px">Reference docs</h2>
+    <p class="muted">In the repo: docs/deconstruction.md (PayAtlas teardown), docs/sitemap.md, docs/seo-spec.md, docs/cta-map.md, and the prompt chain in prompts/.</p>
+  </div>
+</section>

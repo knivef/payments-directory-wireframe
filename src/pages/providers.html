@@ -1,0 +1,30 @@
+<!--meta
+{"route": "/providers/", "title": "Payment Providers Directory: Compare [N] PSPs · [DIRECTORY NAME]",
+ "description": "Filter [N] payment service providers by service, country, industry and payment method. See coverage, reviews and alternatives.",
+ "crumbs": [["Home", "/"], ["Providers", null]],
+ "jsonld": [{"@type": "CollectionPage", "name": "Payment providers directory", "url": "{url}"},
+            {"@type": "ItemList", "numberOfItems": 8, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://example.com/provider/provider-alpha/"}]}]}
+-->
+{{crumbs}}
+<section class="section--tight">
+  <div class="container">
+    <div class="section-head">
+      <div><h1 style="font-size:clamp(32px,5vw,48px)">Payment providers directory</h1><p class="muted" style="margin:0">[N] providers · updated [DATE]</p></div>
+      <a class="card card--surface" href="/for-providers/" style="max-width:340px" data-cta="listing-promo"><strong>Are you a provider?</strong><p style="margin:4px 0 0">List your company free and get intro requests from merchants.</p></a>
+    </div>
+    <div class="listing">
+      <div>
+        <button class="btn btn--ghost btn--block filters-toggle" data-toggle="filters" aria-expanded="false">Filters</button>
+        <aside class="filters" id="filters" aria-label="Filters">{{facets}}</aside>
+      </div>
+      <div>
+        <h2 class="sr-only">Results</h2><div class="results-head"><strong>[N] providers</strong>
+          <label class="small">Sort <select aria-label="Sort"><option>Most complete</option><option>Highest rated</option><option>Newest</option><option>A to Z</option></select></label></div>
+        <span class="wf-note"><b>Ordering.</b> Default sort is profile completeness plus verified data, explained on the How we rank page. Featured rows are always labelled. Filter state lives in query strings, which robots.txt blocks; service categories get their own crawlable paths instead.</span>
+        {{provider_rows}}
+        <div style="text-align:center;margin-top:24px"><button class="btn btn--ghost">Show more</button></div>
+        <p class="small muted" style="text-align:center">Pagination also renders as plain links (?page=2) for crawlers.</p>
+      </div>
+    </div>
+  </div>
+</section>

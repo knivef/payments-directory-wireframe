@@ -1,0 +1,41 @@
+/* Design tokens. The ONLY file that sets colour, type and radius values.
+   base.css reads these and never hardcodes them. Allowlist enforced by scripts/check.sh. */
+:root {
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+
+  --bg: #ffffff;
+  --surface: #f6f7f6;
+  --surface-2: #eceeec;
+  --fg: #16201d;
+  --muted: #5d6763;
+  --line: #e2e5e3;
+
+  --ink: #16201d;
+  --ink-fg: #ffffff;
+  --accent: #0e7a6b;
+  --accent-soft: #e3f3ef;
+  --accent-strong: #0a5a4f;
+  --warn-soft: #fff6d6;
+
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1412;
+    --surface: #171d1b;
+    --surface-2: #202826;
+    --fg: #e8ecea;
+    --muted: #9aa5a1;
+    --line: #2b3431;
+    --ink: #e8ecea;
+    --ink-fg: #0f1412;
+    --accent: #3fc1ac;
+    --accent-soft: #15302b;
+    --accent-strong: #7fdcca;
+    --warn-soft: #3a3115;
+  }
+}

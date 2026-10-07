@@ -1,0 +1,28 @@
+<!--meta
+{"route": "/countries/", "title": "Accept Payments by Country: [N] Market Guides · [DIRECTORY NAME]",
+ "description": "Payment methods, providers and rules for [N] countries. Find out how customers pay and which PSPs can process in each market.",
+ "crumbs": [["Home", "/"], ["Countries", null]],
+ "jsonld": [{"@type": "CollectionPage", "name": "Country payment guides", "url": "{url}"}]}
+-->
+{{crumbs}}
+<section class="section--tight">
+  <div class="container">
+    <h1 style="font-size:clamp(32px,5vw,52px)">Country payment guides</h1>
+    <p class="hero__sub">How customers pay, which providers process locally and what the regulator expects, for [N] markets.</p>
+    <form class="search" role="search" data-wf-form="/countries/brazil/"><label class="sr-only" for="c-q">Find a country</label><input id="c-q" placeholder="Find a country"><button class="btn btn--primary">Go</button></form>
+  </div>
+</section>
+<section class="section--tight"><div class="container"><h2>By region</h2>{{region_cards}}</div></section>
+<section class="section">
+  <div class="container">
+    <h2>All countries</h2>
+    <div class="platform-map">
+      <div><h3>Latin America</h3><ul><li><a href="/countries/brazil/">Brazil</a></li><li><a href="/countries/brazil/?c=mexico">Mexico</a></li><li><a href="/countries/brazil/?c=colombia">Colombia</a></li></ul></div>
+      <div><h3>Europe</h3><ul><li><a href="/countries/brazil/?c=united-kingdom">United Kingdom</a></li><li><a href="/countries/brazil/?c=germany">Germany</a></li><li><a href="/countries/brazil/?c=netherlands">Netherlands</a></li></ul></div>
+      <div><h3>North America</h3><ul><li><a href="/countries/brazil/?c=united-states">United States</a></li><li><a href="/countries/brazil/?c=canada">Canada</a></li></ul></div>
+      <div><h3>Asia</h3><ul><li><a href="/countries/brazil/?c=india">India</a></li><li><a href="/countries/brazil/?c=indonesia">Indonesia</a></li><li><a href="/countries/brazil/?c=japan">Japan</a></li></ul></div>
+      <div><h3>Africa and Middle East</h3><ul><li><a href="/countries/brazil/?c=nigeria">Nigeria</a></li><li><a href="/countries/brazil/?c=united-arab-emirates">United Arab Emirates</a></li></ul></div>
+    </div>
+    <span class="wf-note"><b>Index.</b> PayAtlas groups 205 countries into 13 regions with photo cards. Ours is the same pattern. Only Brazil is built; other links carry the intended slug in the query string.</span>
+  </div>
+</section>

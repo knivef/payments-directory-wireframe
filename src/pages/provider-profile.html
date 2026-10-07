@@ -1,0 +1,51 @@
+<!--meta
+{"route": "/provider/provider-alpha/", "title": "Provider Alpha Review: Services, Coverage & Alternatives",
+ "description": "Provider Alpha offers card processing, orchestration and payouts in Europe and Latin America. See payment methods, industries, reviews and alternatives.",
+ "crumbs": [["Home", "/"], ["Providers", "/providers/"], ["Provider Alpha", null]],
+ "jsonld": [{"@type": "Organization", "name": "Provider Alpha", "url": "https://provider-alpha.example", "address": {"@type": "PostalAddress", "addressCountry": "GB"}}]}
+-->
+{{crumbs}}
+<div class="container">
+  <div class="profile-head">
+    <div class="logo-tile logo-tile--lg" aria-hidden="true">PA</div>
+    <div>
+      <h1>Provider Alpha</h1>
+      <p class="muted" style="margin:6px 0 0"><span class="badge">Verified</span> <span class="stars">&#9733; 4.6</span> (12 reviews) · provider-alpha.example · HQ United Kingdom</p>
+    </div>
+    <div class="hero__ctas" style="margin:0"><button class="btn btn--primary btn--lg" data-modal-open="auth" data-cta="profile-intro">Request intro</button><a class="btn btn--ghost btn--lg" href="/compare/provider-alpha-vs-provider-beta/" data-cta="profile-compare">Compare</a></div>
+  </div>
+</div>
+<div class="sticky-tabs"><div class="container"><nav class="tabs" aria-label="Profile sections">
+  <a href="#about" class="is-active">About</a><a href="#services">Services</a><a href="#coverage">Coverage</a><a href="#methods">Payment methods</a><a href="#reviews">Reviews</a><a href="#contacts">Contacts</a><a href="#alternatives">Alternatives</a>
+</nav></div></div>
+<div class="container two-col">
+  <div>
+    <section class="block" id="about"><h2>About Provider Alpha</h2><p>[Provider-submitted description, 80 to 150 words, edited for house style.]</p>
+      <div class="ph" style="aspect-ratio:16/9">Optional video or screenshot gallery</div></section>
+    <section class="block" id="services"><h2>Services</h2>
+      <h3>Services offered</h3><a class="tag" href="/providers/card-processing/">Card processing</a><a class="tag" href="/providers/card-processing/?s=payment-orchestration">Payment orchestration</a><a class="tag" href="/providers/card-processing/?s=payouts">Payouts</a>
+      <h3 style="margin-top:20px">Industries served</h3><a class="tag" href="/industries/igaming/">iGaming</a><a class="tag" href="/industries/igaming/">E-commerce and retail</a><a class="tag" href="/industries/igaming/">Digital goods and SaaS</a></section>
+    <section class="block" id="coverage"><h2>Coverage</h2><div class="ph" style="aspect-ratio:2/1">World map, covered countries shaded</div>
+      <p class="small muted" style="margin-top:12px">Regions: Europe, Latin America. Settlement currencies: [LIST].</p></section>
+    <section class="block" id="methods"><h2>Payment methods and features</h2>
+      <div class="table-wrap"><table><thead><tr><th>Feature</th><th>Supported</th><th>Source</th></tr></thead><tbody>
+        <tr><td>Visa, Mastercard</td><td>Yes</td><td>Provider submitted</td></tr>
+        <tr><td><a class="link" href="/payment-methods/pix/">Pix</a></td><td>Yes</td><td>Editor verified</td></tr>
+        <tr><td>Apple Pay, Google Pay</td><td>Yes</td><td>Provider submitted</td></tr>
+        <tr><td>Recurring billing</td><td>No</td><td>Public sources</td></tr>
+        <tr><td>Multi-currency settlement</td><td>[UNKNOWN]</td><td>Not confirmed</td></tr></tbody></table></div>
+      <span class="wf-note"><b>Provenance.</b> Every fact shows its source. PayAtlas shows "last updated" at profile level only; we show it per field, which is our trust differentiator.</span></section>
+    <section class="block" id="reviews"><h2>Reviews</h2>
+      <div class="split"><div class="card card--surface"><strong style="font-size:32px">4.6</strong><p class="small">12 reviews from verified merchants</p></div>
+      <div><p class="small muted">Rating breakdown bars: onboarding, support, pricing transparency, payouts.</p></div></div>
+      <div class="card" style="margin-top:16px"><p><strong>[Reviewer role, company type]</strong> · <span class="stars">&#9733; 5</span></p><p>[Review text. Only verified merchants can post.]</p><p class="small muted">Provider reply: [Reply text]</p></div>
+      <button class="btn btn--ghost" data-modal-open="auth" data-cta="profile-review">Write a review</button></section>
+    <section class="block" id="contacts"><h2>Contacts</h2><div class="ph" style="min-height:100px">Sales email, phone and LinkedIn, blurred for signed-out users</div>
+      <button class="btn btn--primary" style="margin-top:12px" data-modal-open="auth" data-cta="profile-contacts">Sign in to view contacts</button></section>
+    <section class="block" id="alternatives"><h2>Provider Alpha alternatives</h2>{{alt_cards}}</section>
+  </div>
+  <aside class="aside-sticky" style="padding-top:32px">
+    <div class="aside-card"><dl class="kv"><dt>HQ</dt><dd>United Kingdom</dd><dt>Founded</dt><dd>[YEAR]</dd><dt>Licences</dt><dd>[LICENCE, regulator]</dd><dt>Last verified</dt><dd>[DATE]</dd><dt>Listed since</dt><dd>[DATE]</dd></dl></div>
+    <div class="aside-card"><p class="small" style="margin:0 0 8px">Is something wrong or missing?</p><a class="link small" href="/hub/" data-cta="profile-suggest">Suggest a correction</a><br><a class="link small" href="/for-providers/" data-cta="profile-claim">Work here? Claim this profile</a></div>
+  </aside>
+</div>

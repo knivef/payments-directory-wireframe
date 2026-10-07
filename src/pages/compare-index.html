@@ -1,0 +1,30 @@
+<!--meta
+{"route": "/compare/", "title": "Compare Payment Providers Side by Side · [DIRECTORY NAME]",
+ "description": "Pick any two payment providers and compare coverage, payment methods, features and merchant reviews side by side.",
+ "crumbs": [["Home", "/"], ["Compare", null]],
+ "jsonld": [{"@type": "CollectionPage", "name": "Payment provider comparisons", "url": "{url}"}]}
+-->
+{{crumbs}}
+<section class="hero hero--center">
+  <div class="container">
+    <h1 style="font-size:clamp(32px,5vw,52px)">Compare payment providers</h1>
+    <p class="hero__sub">Pick two providers. See coverage, methods, features and reviews side by side.</p>
+    <form class="compare-form" style="max-width:820px;margin:32px auto 0" data-wf-form="/compare/provider-alpha-vs-provider-beta/">
+      <label class="sr-only" for="cmp-a">First provider</label><input class="input" id="cmp-a" placeholder="First provider" value="Provider Alpha">
+      <span class="vs__badge" style="justify-self:center">VS</span>
+      <label class="sr-only" for="cmp-b">Second provider</label><input class="input" id="cmp-b" placeholder="Second provider" value="Provider Beta">
+      <button class="btn btn--primary" data-cta="cmp-submit">Compare</button>
+    </form>
+  </div>
+</section>
+<section class="section--tight">
+  <div class="container">
+    <h2>Popular comparisons</h2>
+    <div class="grid grid--3">
+      <a class="card" href="/compare/provider-alpha-vs-provider-beta/"><div class="mini"><span class="logo-tile">PA</span><span class="vs__badge">VS</span><span class="logo-tile">PB</span></div><h3 style="margin-top:12px">Provider Alpha vs Provider Beta</h3><p>Card processing</p></a>
+      <a class="card" href="/compare/provider-alpha-vs-provider-beta/"><div class="mini"><span class="logo-tile">PD</span><span class="vs__badge">VS</span><span class="logo-tile">PE</span></div><h3 style="margin-top:12px">Provider Delta vs Provider Epsilon</h3><p>Fraud prevention</p></a>
+      <a class="card" href="/compare/provider-alpha-vs-provider-beta/"><div class="mini"><span class="logo-tile">PG</span><span class="vs__badge">VS</span><span class="logo-tile">PH</span></div><h3 style="margin-top:12px">Provider Gamma vs Provider Eta</h3><p>Payouts</p></a>
+    </div>
+    <span class="wf-note"><b>Pairs.</b> PayAtlas indexes 121 pairs. We publish the top 150 pairs by search demand, one canonical per pair in alphabetical order (a-vs-b redirects b-vs-a). Pairs only exist when both profiles are verified.</span>
+  </div>
+</section>
