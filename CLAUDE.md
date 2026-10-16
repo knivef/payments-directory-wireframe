@@ -11,10 +11,18 @@ against payatlas.com. Three deliverables live together:
 2. `prompts/`: a five-stage prompt chain that builds the wireframe from scratch
 3. `site/`: the rendered wireframe, 18 templates plus hub and 404, served by Vercel
 
-Branch `v2` adds direct-sold banner and margin ads and an /advertise/ page.
-`main` is v1 without ads.
-
 Working brand name is the literal placeholder `[DIRECTORY NAME]`.
+
+## Versions
+
+`main` is v1 (no ads). Branch `v2` adds direct-sold ads and an /advertise/
+page. Make shared changes on `main`, then merge into `v2`.
+
+Live: v1 https://payments-directory-wireframe.vercel.app, v2
+https://payments-directory-wireframe-v2.vercel.app (a project domain assigned
+to branch v2 in Vercel Settings, Domains, so it stays public while Vercel
+Authentication protects preview URLs). The sticky version strip reads these
+from `data/versions.json`, which must be identical on both branches.
 
 ## Layout
 
