@@ -20,11 +20,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap">
 <link rel="stylesheet" href="/assets/tokens.css?v=8a6c7b0d">
-<link rel="stylesheet" href="/assets/base.css?v=b271309b">
+<link rel="stylesheet" href="/assets/base.css?v=db941007">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://example.com/"}, {"@type": "ListItem", "position": 2, "name": "Wireframe hub", "item": "https://example.com/hub/"}]}</script>
 </head>
 <body>
 <a class="sr-only" href="#main">Skip to content</a>
+<div class="top-stack">
+<nav class="version-bar" aria-label="Wireframe version" data-versions="{&quot;current&quot;: &quot;v1&quot;, &quot;versions&quot;: [{&quot;id&quot;: &quot;v1&quot;, &quot;label&quot;: &quot;v1&quot;, &quot;detail&quot;: &quot;No ads&quot;, &quot;branch&quot;: &quot;main&quot;, &quot;url&quot;: &quot;&quot;}, {&quot;id&quot;: &quot;v2&quot;, &quot;label&quot;: &quot;v2&quot;, &quot;detail&quot;: &quot;With ads&quot;, &quot;branch&quot;: &quot;v2&quot;, &quot;url&quot;: &quot;&quot;}], &quot;only_in&quot;: {&quot;v2&quot;: [&quot;/advertise/&quot;]}}">
+  <div class="container version-bar__inner">
+    <span class="version-bar__label">Wireframe</span>
+    <div class="version-switch"><a class="version-switch__opt is-current" href="/hub/" aria-current="page"><strong>v1</strong> <span>No ads</span></a><a class="version-switch__opt" href="/hub/#versions" data-version="v2"><strong>v2</strong> <span>With ads</span></a></div>
+    <a class="version-bar__hub" href="/hub/">All templates</a>
+  </div>
+</nav>
 
 <header class="site-header">
   <div class="container site-header__bar">
@@ -54,6 +62,7 @@
     <button class="btn btn--ghost btn--block" data-modal-open="auth">Sign in</button>
   </div>
 </header>
+</div>
 <main id="main">
 
 <nav aria-label="Breadcrumb" class="container"><ol class="crumbs"><li><a href="/">Home</a></li><li aria-current="page">Wireframe hub</li></ol></nav>
@@ -85,6 +94,9 @@
     <h2 style="margin-top:48px" id="how-we-rank">Pages not built in the wireframe</h2>
     <p class="muted">About, How we rank, Ownership, Roadmap, Contact and legal pages link here. "How we rank" and "Ownership" are launch requirements: they answer the neutrality question PayAtlas leaves open.</p>
     <p class="muted" id="ownership">Links to unbuilt entities (other services, countries, providers) open the sample page for that template, with the intended slug in the query string.</p>
+    <h2 style="margin-top:48px" id="versions">Versions</h2>
+    <p class="muted">The dark strip at the top switches between versions and keeps you on the same page. v1 (branch main) has no ads. v2 (branch v2) adds banner, margin, in-content and sponsored listing ads, plus an /advertise/ page; from there, switching to v1 goes to the home page.</p>
+    <p class="muted">On Vercel branch URLs the switch works automatically. On the production domain, set each version's url in data/versions.json on both branches, render and push. Locally there is only one version per server, so the other version shows as unset.</p>
     <h2 style="margin-top:48px">Reference docs</h2>
     <p class="muted">In the repo: docs/deconstruction.md (PayAtlas teardown), docs/sitemap.md, docs/seo-spec.md, docs/cta-map.md, and the prompt chain in prompts/.</p>
   </div>
@@ -130,6 +142,6 @@
   </div>
 </div>
 <button class="btn btn--soft btn--sm wf-toggle" data-notes-toggle>Hide notes</button>
-<script src="/assets/site.js?v=cf6e1f1b" defer></script>
+<script src="/assets/site.js?v=8e2a5341" defer></script>
 </body>
 </html>

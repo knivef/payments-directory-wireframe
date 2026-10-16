@@ -35,6 +35,9 @@ BRAND = "[DIRECTORY NAME]"
 TAX = json.loads((ROOT / "data" / "taxonomy.json").read_text())
 PROV = json.loads((ROOT / "data" / "providers.json").read_text())["providers"]
 FAQS = json.loads((ROOT / "data" / "faqs.json").read_text())
+VERSIONS = json.loads((ROOT / "data" / "versions.json").read_text())
+# A branch is v2 if it carries the ad inventory. No per-branch config, so merges stay clean.
+VERSION = "v2" if (ROOT / "data" / "ads.json").exists() else "v1"
 
 e = html.escape
 
@@ -61,6 +64,23 @@ def provider_href(p):
 
 
 # ---------- shared chrome ----------
+
+def version_bar(route):
+    links = "".join(
+        f'<a class="version-switch__opt{" is-current" if v["id"] == VERSION else ""}" '
+        + (f'href="{route}" aria-current="page"' if v["id"] == VERSION else f'href="/hub/#versions" data-version="{v["id"]}"')
+        + f'><strong>{e(v["label"])}</strong> <span>{e(v["detail"])}</span></a>'
+        for v in VERSIONS["versions"]
+    )
+    cfg = e(json.dumps({"current": VERSION, **{k: VERSIONS[k] for k in ("versions", "only_in")}}))
+    return f"""<nav class="version-bar" aria-label="Wireframe version" data-versions="{cfg}">
+  <div class="container version-bar__inner">
+    <span class="version-bar__label">Wireframe</span>
+    <div class="version-switch">{links}</div>
+    <a class="version-bar__hub" href="/hub/">All templates</a>
+  </div>
+</nav>"""
+
 
 def header():
     cats = TAX["categories"]
@@ -363,7 +383,10 @@ def page(meta, body):
 </head>
 <body>
 <a class="sr-only" href="#main">Skip to content</a>
+<div class="top-stack">
+{version_bar(meta["route"] if meta["route"] != "/404/" else "/404.html")}
 {header()}
+</div>
 <main id="main">
 {body}
 </main>
