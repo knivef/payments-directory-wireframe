@@ -6,7 +6,7 @@ payatlas.com. Not for indexing.
 - **Start here:** `docs/deconstruction.md`, the full PayAtlas teardown
 - **Specs:** `docs/sitemap.md`, `docs/seo-spec.md`, `docs/cta-map.md`
 - **Rebuild from scratch:** run `prompts/00-orchestrator.md` in Claude Code
-- **Browse the wireframe:** `/hub/` on the deployed site
+- **Live:** v1 https://payments-directory-wireframe.vercel.app · v2 https://payments-directory-wireframe-v2.vercel.app (start at `/hub/`). The strip at the top switches between them.
 
 ## Local
 

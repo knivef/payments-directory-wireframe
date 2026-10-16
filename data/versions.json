@@ -1,8 +1,24 @@
 {
-  "_note": "Version switcher config, identical on every branch. Set url once Vercel is imported (production domain for v1, branch URL for v2). While url is empty, site.js derives the other version from Vercel branch URLs (<project>-git-<branch>-<scope>.vercel.app).",
+  "_note": "Version switcher config, identical on every branch. v1 is the production domain (branch main). v2 is a project domain assigned to branch v2 in Vercel (Settings, Domains), which keeps it public while Vercel Authentication protects preview URLs. If url is empty, site.js falls back to the Vercel branch URL pattern.",
   "versions": [
-    {"id": "v1", "label": "v1", "detail": "No ads", "branch": "main", "url": ""},
-    {"id": "v2", "label": "v2", "detail": "With ads", "branch": "v2", "url": ""}
+    {
+      "id": "v1",
+      "label": "v1",
+      "detail": "No ads",
+      "branch": "main",
+      "url": "https://payments-directory-wireframe.vercel.app"
+    },
+    {
+      "id": "v2",
+      "label": "v2",
+      "detail": "With ads",
+      "branch": "v2",
+      "url": "https://payments-directory-wireframe-v2.vercel.app"
+    }
   ],
-  "only_in": {"v2": ["/advertise/"]}
+  "only_in": {
+    "v2": [
+      "/advertise/"
+    ]
+  }
 }
