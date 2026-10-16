@@ -66,6 +66,32 @@
     m.addEventListener('click', function (e) { if (e.target === m || e.target.hasAttribute('data-modal-close')) closeModals(); });
   });
 
+  // Version switcher: link to the same page on the other version.
+  // URL source, in order: data/versions.json url, then the Vercel branch URL
+  // pattern (<project>-git-<branch>-<scope>.vercel.app). Otherwise the link
+  // stays on /hub/#versions, which explains how to set it.
+  var vbar = document.querySelector('[data-versions]');
+  if (vbar) {
+    var cfg; try { cfg = JSON.parse(vbar.getAttribute('data-versions')); } catch (e) { cfg = null; }
+    if (cfg) {
+      var byId = {}; cfg.versions.forEach(function (v) { byId[v.id] = v; });
+      var cur = byId[cfg.current];
+      $$('[data-version]', vbar).forEach(function (a) {
+        var target = byId[a.getAttribute('data-version')];
+        var base = (target.url || '').replace(/\/$/, '');
+        var host = location.hostname, marker = '-git-' + cur.branch + '-';
+        if (!base && host.indexOf(marker) !== -1) {
+          base = location.protocol + '//' + host.replace(marker, '-git-' + target.branch + '-');
+        }
+        if (!base) { a.classList.add('is-unset'); a.title = 'Set the ' + target.id + ' URL in data/versions.json'; return; }
+        var path = location.pathname;
+        var onlyHere = (cfg.only_in && cfg.only_in[cur.id]) || [];
+        if (onlyHere.indexOf(path) !== -1) path = '/';
+        a.href = base + path + location.search + location.hash;
+      });
+    }
+  }
+
   // Cookie banner.
   var cookie = document.querySelector('[data-cookie]');
   if (cookie && !store.get('wf-cookie')) cookie.hidden = false;

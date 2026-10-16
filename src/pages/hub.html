@@ -37,6 +37,9 @@
     <h2 style="margin-top:48px" id="how-we-rank">Pages not built in the wireframe</h2>
     <p class="muted">About, How we rank, Ownership, Roadmap, Contact and legal pages link here. "How we rank" and "Ownership" are launch requirements: they answer the neutrality question PayAtlas leaves open.</p>
     <p class="muted" id="ownership">Links to unbuilt entities (other services, countries, providers) open the sample page for that template, with the intended slug in the query string.</p>
+    <h2 style="margin-top:48px" id="versions">Versions</h2>
+    <p class="muted">The dark strip at the top switches between versions and keeps you on the same page. v1 (branch main) has no ads. v2 (branch v2) adds banner, margin, in-content and sponsored listing ads, plus an /advertise/ page; from there, switching to v1 goes to the home page.</p>
+    <p class="muted">On Vercel branch URLs the switch works automatically. On the production domain, set each version's url in data/versions.json on both branches, render and push. Locally there is only one version per server, so the other version shows as unset.</p>
     <h2 style="margin-top:48px">Reference docs</h2>
     <p class="muted">In the repo: docs/deconstruction.md (PayAtlas teardown), docs/sitemap.md, docs/seo-spec.md, docs/cta-map.md, and the prompt chain in prompts/.</p>
   </div>

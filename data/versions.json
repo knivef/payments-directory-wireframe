@@ -1,0 +1,8 @@
+{
+  "_note": "Version switcher config, identical on every branch. Set url once Vercel is imported (production domain for v1, branch URL for v2). While url is empty, site.js derives the other version from Vercel branch URLs (<project>-git-<branch>-<scope>.vercel.app).",
+  "versions": [
+    {"id": "v1", "label": "v1", "detail": "No ads", "branch": "main", "url": ""},
+    {"id": "v2", "label": "v2", "detail": "With ads", "branch": "v2", "url": ""}
+  ],
+  "only_in": {"v2": ["/advertise/"]}
+}
