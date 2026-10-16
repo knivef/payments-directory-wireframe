@@ -13,7 +13,8 @@ python3 scripts/render.py
 ./scripts/check.sh
 It must pass: no em dashes, no " -- ", site/ in sync with src/, token
 allowlist, one H1 per page, no heading skips, JSON-LD parses, every internal
-link resolves, no unfilled instruction brackets like [H1: ...].
+link resolves, no unfilled instruction brackets like [H1: ...], and the ad
+policy checks in section 6.
 
 Then list every copy placeholder with:
 grep -rnoE "\[[A-Z][^]<]*\]" src/pages data | sort | uniq -c | sort -rn
@@ -28,6 +29,10 @@ On every route:
   drawer and the filters toggle.
 - Test: tabs, accordions, stepper next and back, auth modal open and Escape,
   cookie banner choice persists, notes toggle persists.
+- Ads (v2): at 1680px both margin skyscrapers show outside the content
+  column; at 1024px and 375px every ad fits its column; the mobile anchor
+  closes and stays closed for the session; "Hide ads" hides every slot;
+  ad-free pages (match, assist, for providers, advertise, hub, 404) have none.
 - Dark mode: emulate prefers-color-scheme dark and screenshot home and profile.
 - Console: zero errors.
 Fix anything that fails and rerun section 1.

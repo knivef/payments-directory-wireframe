@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap">
 <link rel="stylesheet" href="/assets/tokens.css?v=8a6c7b0d">
-<link rel="stylesheet" href="/assets/base.css?v=b271309b">
+<link rel="stylesheet" href="/assets/base.css?v=0ba01f23">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://example.com/"}, {"@type": "ListItem", "position": 2, "name": "Wireframe hub", "item": "https://example.com/hub/"}]}</script>
 </head>
 <body>
@@ -56,11 +56,14 @@
 </header>
 <main id="main">
 
+
 <nav aria-label="Breadcrumb" class="container"><ol class="crumbs"><li><a href="/">Home</a></li><li aria-current="page">Wireframe hub</li></ol></nav>
 <section class="section--tight">
   <div class="container">
-    <h1 style="font-size:clamp(32px,5vw,48px)">Wireframe hub</h1>
-    <p class="hero__sub">Internal review build of a broad payments provider directory, benchmarked against PayAtlas. Every template below is clickable. Yellow notes explain decisions; toggle them with the button bottom right.</p>
+    <span class="pill">Version 2 · with ads</span>
+    <h1 style="font-size:clamp(32px,5vw,48px);margin-top:12px">Wireframe hub</h1>
+    <p class="hero__sub">Internal review build of a broad payments provider directory, benchmarked against PayAtlas. Every template below is clickable. Yellow notes explain decisions. Version 2 adds banner, margin, sidebar, in-article and sponsored listing ads; striped boxes marked Sponsored are ad slots. Use the buttons bottom right to hide ads or notes and compare.</p>
+    <p class="small muted">Margin skyscrapers only appear on screens 1560px and wider. Mobile adds a dismissible bottom anchor ad.</p>
     <h2>Templates</h2>
     <ul class="hub-list">
       <li><a href="/"><strong>Home</strong><br><code>/</code></a></li>
@@ -80,8 +83,11 @@
       <li><a href="/mcc/5967/"><strong>MCC code</strong><br><code>/mcc/{code}/</code></a></li>
       <li><a href="/journal/sample-guide/"><strong>Journal article</strong><br><code>/journal/{slug}/</code></a></li>
       <li><a href="/events/"><strong>Events</strong><br><code>/events/</code></a></li>
+      <li><a href="/advertise/"><strong>Advertise (new in v2)</strong><br><code>/advertise/</code></a></li>
       <li><a href="/404.html"><strong>404</strong><br><code>/404</code></a></li>
     </ul>
+    <h2 style="margin-top:48px">Ad inventory by page</h2>
+    <div class="table-wrap"><table><thead><tr><th scope="col">Page</th><th scope="col">Top banner</th><th scope="col">Margin skyscrapers</th><th scope="col">Billboard</th><th scope="col">In-article banner</th><th scope="col">Sidebar box</th><th scope="col">Sponsored listing</th><th scope="col">Mobile anchor</th></tr></thead><tbody><tr><td><a class="link" href="/">/</a></td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td></td><td></td><td></td><td>&#10003;</td></tr><tr><td><a class="link" href="/providers/">/providers/</a></td><td>&#10003;</td><td>&#10003;</td><td></td><td></td><td></td><td>&#10003;</td><td>&#10003;</td></tr><tr><td><a class="link" href="/providers/card-processing/">/providers/card-processing/</a></td><td>&#10003;</td><td>&#10003;</td><td></td><td></td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td></tr><tr><td><a class="link" href="/provider/provider-alpha/">/provider/provider-alpha/</a></td><td>&#10003;</td><td>&#10003;</td><td></td><td></td><td>&#10003;</td><td></td><td>&#10003;</td></tr><tr><td><a class="link" href="/compare/">/compare/</a></td><td>&#10003;</td><td>&#10003;</td><td></td><td></td><td></td><td></td><td>&#10003;</td></tr><tr><td><a class="link" href="/compare/provider-alpha-vs-provider-beta/">/compare/provider-alpha-vs-provider-beta/</a></td><td>&#10003;</td><td>&#10003;</td><td></td><td>&#10003;</td><td></td><td></td><td>&#10003;</td></tr><tr><td><a class="link" href="/countries/">/countries/</a></td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td></td><td></td><td></td><td>&#10003;</td></tr><tr><td><a class="link" href="/countries/brazil/">/countries/brazil/</a></td><td>&#10003;</td><td>&#10003;</td><td></td><td>&#10003;</td><td></td><td></td><td>&#10003;</td></tr><tr><td><a class="link" href="/industries/igaming/">/industries/igaming/</a></td><td>&#10003;</td><td>&#10003;</td><td></td><td>&#10003;</td><td></td><td></td><td>&#10003;</td></tr><tr><td><a class="link" href="/payment-methods/pix/">/payment-methods/pix/</a></td><td>&#10003;</td><td>&#10003;</td><td></td><td>&#10003;</td><td>&#10003;</td><td></td><td>&#10003;</td></tr><tr><td><a class="link" href="/glossary/3ds/">/glossary/3ds/</a></td><td>&#10003;</td><td>&#10003;</td><td></td><td></td><td>&#10003;</td><td></td><td>&#10003;</td></tr><tr><td><a class="link" href="/mcc/5967/">/mcc/5967/</a></td><td>&#10003;</td><td>&#10003;</td><td></td><td>&#10003;</td><td></td><td></td><td>&#10003;</td></tr><tr><td><a class="link" href="/journal/sample-guide/">/journal/sample-guide/</a></td><td>&#10003;</td><td>&#10003;</td><td></td><td>&#10003;</td><td></td><td></td><td>&#10003;</td></tr><tr><td><a class="link" href="/events/">/events/</a></td><td>&#10003;</td><td>&#10003;</td><td></td><td>&#10003;</td><td></td><td></td><td>&#10003;</td></tr><tr><td>/match/</td><td colspan="7" class="muted">Ad-free</td></tr><tr><td>/assist/</td><td colspan="7" class="muted">Ad-free</td></tr><tr><td>/for-providers/</td><td colspan="7" class="muted">Ad-free</td></tr><tr><td>/advertise/</td><td colspan="7" class="muted">Ad-free</td></tr><tr><td>/hub/</td><td colspan="7" class="muted">Ad-free</td></tr><tr><td>/404/</td><td colspan="7" class="muted">Ad-free</td></tr></tbody></table></div>
     <h2 style="margin-top:48px" id="how-we-rank">Pages not built in the wireframe</h2>
     <p class="muted">About, How we rank, Ownership, Roadmap, Contact and legal pages link here. "How we rank" and "Ownership" are launch requirements: they answer the neutrality question PayAtlas leaves open.</p>
     <p class="muted" id="ownership">Links to unbuilt entities (other services, countries, providers) open the sample page for that template, with the intended slug in the query string.</p>
@@ -106,7 +112,7 @@
         <p class="muted small" style="margin-top:12px;max-width:260px">An independent directory of payment providers. [OWNERSHIP LINE, one sentence, to be confirmed].</p></div>
       <div><h3>Providers</h3><ul><li><a href="/providers/?category=merchant-services">Merchant services</a></li><li><a href="/providers/?category=payment-technology">Payment technology</a></li><li><a href="/providers/?category=business-support">Business support</a></li><li><a href="/providers/?category=money-movement">Money movement</a></li><li><a href="/providers/?category=build-partners">Build partners</a></li></ul></div>
       <div><h3>Guides</h3><ul><li><a href="/countries/">Country guides</a></li><li><a href="/industries/igaming/">Industry guides</a></li><li><a href="/payment-methods/pix/">Payment methods</a></li><li><a href="/glossary/3ds/">Regulators</a></li><li><a href="/mcc/5967/">MCC codes</a></li><li><a href="/glossary/3ds/">Glossary</a></li></ul></div>
-      <div><h3>Tools</h3><ul><li><a href="/match/">Match tool</a></li><li><a href="/compare/">Compare</a></li><li><a href="/assist/">Assist</a></li><li><a href="/for-providers/#badges">Trust badges</a></li></ul></div>
+      <div><h3>Tools</h3><ul><li><a href="/match/">Match tool</a></li><li><a href="/compare/">Compare</a></li><li><a href="/assist/">Assist</a></li><li><a href="/for-providers/#badges">Trust badges</a></li><li><a href="/advertise/">Advertise</a></li></ul></div>
       <div><h3>Company</h3><ul><li><a href="/hub/">About</a></li><li><a href="/hub/#how-we-rank">How we rank</a></li><li><a href="/hub/#ownership">Ownership</a></li><li><a href="/hub/">Roadmap</a></li><li><a href="/hub/">Contact</a></li></ul></div>
       <div><h3>Legal</h3><ul><li><a href="/hub/">Terms</a></li><li><a href="/hub/">Privacy</a></li><li><a href="/hub/">Cookies</a></li><li><a href="/hub/">Disclaimer</a></li></ul></div>
     </div>
@@ -129,7 +135,8 @@
     <p class="small muted" style="margin-top:12px">Continue with Google · Continue with LinkedIn</p>
   </div>
 </div>
-<button class="btn btn--soft btn--sm wf-toggle" data-notes-toggle>Hide notes</button>
-<script src="/assets/site.js?v=cf6e1f1b" defer></script>
+<div class="wf-toggle"><button class="btn btn--soft btn--sm" data-ads-toggle>Hide ads</button><button class="btn btn--soft btn--sm" data-notes-toggle>Hide notes</button></div>
+
+<script src="/assets/site.js?v=a5353a31" defer></script>
 </body>
 </html>

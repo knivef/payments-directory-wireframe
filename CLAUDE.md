@@ -9,7 +9,10 @@ against payatlas.com. Three deliverables live together:
 
 1. `docs/`: the PayAtlas teardown and our IA, SEO and CTA specs
 2. `prompts/`: a five-stage prompt chain that builds the wireframe from scratch
-3. `site/`: the rendered wireframe, 17 templates plus hub and 404, served by Vercel
+3. `site/`: the rendered wireframe, 18 templates plus hub and 404, served by Vercel
+
+Branch `v2` adds direct-sold banner and margin ads and an /advertise/ page.
+`main` is v1 without ads.
 
 Working brand name is the literal placeholder `[DIRECTORY NAME]`.
 
@@ -20,8 +23,9 @@ docs/deconstruction.md   PayAtlas teardown: model, IA, sitemap, templates, desig
 docs/sitemap.md          Our URL map, nav, footer, taxonomy, linking rules
 docs/seo-spec.md         Title and description formulas, JSON-LD per template, robots, E-E-A-T
 docs/cta-map.md          Every CTA by template and intent, data-cta names, auth gating
-prompts/00..05           Orchestrator, IA, design system, templates, SEO pass, QA and deploy
-data/*.json              Taxonomy, fictional sample providers, FAQ source of truth
+docs/ads-spec.md         v2: ad slots, sizes, page plan, ad policy, featured vs sponsored
+prompts/00..05           Orchestrator, IA, design system, templates, 03b ads (v2), SEO pass, QA and deploy
+data/*.json              Taxonomy, sample providers, FAQ source of truth, ads.json (v2)
 src/pages/*.html         Page bodies with a meta block. One file per template.
 scripts/render.py        Wraps bodies with shared chrome, expands macros, writes site/
 scripts/check.sh         Health check. Run before every push.
@@ -41,6 +45,10 @@ hardcodes a hex colour. The allowlist is in `check.sh` section 4.
 
 **FAQs come from data/faqs.json only.** The page accordion and the FAQPage
 JSON-LD both render from it, so they cannot drift.
+
+**Ads come from data/ads.json only (v2).** render.py fails the build if a
+page's ads differ from its page_plan or an ad-free page gets an ad. Every ad
+is labelled Sponsored and links rel="sponsored nofollow".
 
 **No build step on Vercel.** render.py runs locally; site/ is committed.
 No framework, no package manager. If a task seems to need one, stop and ask.

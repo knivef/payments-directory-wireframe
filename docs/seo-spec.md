@@ -89,6 +89,12 @@ stay crawlable while filter combinations stay blocked.
 See `sitemap.md`, section "Internal linking rules". Mega menu plus footer give
 every page a path to every hub within two clicks.
 
+## Ads and SEO (v2)
+
+Ad links carry `rel="sponsored nofollow"`. Ads add no headings and no
+structured data. Every slot reserves its height, so ads add zero CLS. Above the
+fold, one banner only. Full rules in `docs/ads-spec.md`.
+
 ## Performance budget
 
 LCP under 2.5s and CLS under 0.1 on listing and profile at 4G mobile. One web

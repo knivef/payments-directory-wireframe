@@ -86,6 +86,34 @@
     });
   }
 
+  // Ads toggle (v2): compare the page with and without ad inventory.
+  var at = document.querySelector('[data-ads-toggle]');
+  if (store.get('wf-ads') === 'off') document.body.classList.add('hide-ads');
+  if (at) {
+    var adLabel = function () { at.textContent = document.body.classList.contains('hide-ads') ? 'Show ads' : 'Hide ads'; };
+    adLabel();
+    at.addEventListener('click', function () {
+      var off = document.body.classList.toggle('hide-ads');
+      store.set('wf-ads', off ? 'off' : 'on');
+      adLabel();
+    });
+  }
+
+  // Mobile anchor ad: closes for the rest of the session.
+  var anchor = document.querySelector('.ad--anchor');
+  var session = {
+    get: function (k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } },
+    set: function (k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} }
+  };
+  if (anchor && session.get('wf-anchor') === 'closed') { anchor.hidden = true; document.body.classList.remove('has-anchor'); }
+  $$('[data-ad-close]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      anchor.hidden = true;
+      document.body.classList.remove('has-anchor');
+      session.set('wf-anchor', 'closed');
+    });
+  });
+
   // Stepper (match tool): [data-stepper] with children [data-step].
   $$('[data-stepper]').forEach(function (root) {
     var steps = $$('[data-step]', root), bars = $$('.progress span', root), i = 0;

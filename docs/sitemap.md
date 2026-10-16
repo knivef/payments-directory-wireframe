@@ -21,7 +21,7 @@ Rule: no more than five top-level items. Everything else lives in the footer.
 ## Footer
 
 Five columns: Providers (5 categories), Guides (6 reference types), Tools (Match,
-Compare, Assist, Trust badges), Company (About, How we rank, Ownership, Roadmap,
+Compare, Assist, Trust badges, Advertise), Company (About, How we rank, Ownership, Roadmap,
 Contact), Legal (Terms, Privacy, Cookies, Disclaimer). Newsletter band above.
 Ownership and ranking links sit in the footer on every page. That is the
 neutrality signal PayAtlas lacks.
@@ -52,6 +52,7 @@ Clean slugs, trailing slash, no numeric IDs unless two entities collide.
 | Regulator | `/regulators/{slug}/` | yes | about 300 | uses glossary shell |
 | Journal article | `/journal/{slug}/` | yes | editorial | `/journal/sample-guide/` |
 | Events index | `/events/` | yes | 1 | `/events/` |
+| Advertise (v2) | `/advertise/` | yes | 1 | `/advertise/` |
 | Account, search results, filters with query strings | `/account/`, `?q=`, `?filter=` | no | | |
 | UGC (discussions, jobs) | `/community/...` | noindex until 20+ quality posts | | |
 

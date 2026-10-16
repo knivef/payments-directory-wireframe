@@ -4,7 +4,8 @@ Internal wireframe of a broad payments provider directory, benchmarked against
 payatlas.com. Not for indexing.
 
 - **Start here:** `docs/deconstruction.md`, the full PayAtlas teardown
-- **Specs:** `docs/sitemap.md`, `docs/seo-spec.md`, `docs/cta-map.md`
+- **Specs:** `docs/sitemap.md`, `docs/seo-spec.md`, `docs/cta-map.md`, `docs/ads-spec.md` (v2)
+- **Versions:** `main` is v1 (no ads). `v2` adds banner, margin, in-content and sponsored listing ads.
 - **Rebuild from scratch:** run `prompts/00-orchestrator.md` in Claude Code
 - **Browse the wireframe:** `/hub/` on the deployed site
 

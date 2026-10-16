@@ -35,6 +35,8 @@ BRAND = "[DIRECTORY NAME]"
 TAX = json.loads((ROOT / "data" / "taxonomy.json").read_text())
 PROV = json.loads((ROOT / "data" / "providers.json").read_text())["providers"]
 FAQS = json.loads((ROOT / "data" / "faqs.json").read_text())
+ADS = json.loads((ROOT / "data" / "ads.json").read_text())
+PLACED = []  # slots placed on the page currently being rendered
 
 e = html.escape
 
@@ -142,7 +144,7 @@ def footer():
         <p class="muted small" style="margin-top:12px;max-width:260px">An independent directory of payment providers. [OWNERSHIP LINE, one sentence, to be confirmed].</p></div>
       <div><h3>Providers</h3><ul>{cats}</ul></div>
       <div><h3>Guides</h3><ul>{guides}</ul></div>
-      <div><h3>Tools</h3><ul><li><a href="/match/">Match tool</a></li><li><a href="/compare/">Compare</a></li><li><a href="/assist/">Assist</a></li><li><a href="/for-providers/#badges">Trust badges</a></li></ul></div>
+      <div><h3>Tools</h3><ul><li><a href="/match/">Match tool</a></li><li><a href="/compare/">Compare</a></li><li><a href="/assist/">Assist</a></li><li><a href="/for-providers/#badges">Trust badges</a></li><li><a href="/advertise/">Advertise</a></li></ul></div>
       <div><h3>Company</h3><ul><li><a href="/hub/">About</a></li><li><a href="/hub/#how-we-rank">How we rank</a></li><li><a href="/hub/#ownership">Ownership</a></li><li><a href="/hub/">Roadmap</a></li><li><a href="/hub/">Contact</a></li></ul></div>
       <div><h3>Legal</h3><ul><li><a href="/hub/">Terms</a></li><li><a href="/hub/">Privacy</a></li><li><a href="/hub/">Cookies</a></li><li><a href="/hub/">Disclaimer</a></li></ul></div>
     </div>
@@ -165,7 +167,7 @@ def footer():
     <p class="small muted" style="margin-top:12px">Continue with Google · Continue with LinkedIn</p>
   </div>
 </div>
-<button class="btn btn--soft btn--sm wf-toggle" data-notes-toggle>Hide notes</button>"""
+<div class="wf-toggle"><button class="btn btn--soft btn--sm" data-ads-toggle>Hide ads</button><button class="btn btn--soft btn--sm" data-notes-toggle>Hide notes</button></div>"""
 
 
 # ---------- macros ----------
@@ -174,9 +176,15 @@ def stars(p):
     return f'<span class="stars">&#9733; {p["rating"]}</span> <span class="muted">({p["reviews"]} reviews)</span>'
 
 
-def provider_rows(n=None):
+def provider_rows(arg=None):
+    """{{provider_rows}}, {{provider_rows:5}} (first 5) or {{provider_rows:3-8}} (slice)."""
+    start, end = 0, len(PROV)
+    if arg and "-" in arg:
+        start, end = (int(x) for x in arg.split("-"))
+    elif arg:
+        end = int(arg)
     out = []
-    for i, p in enumerate(PROV[: n or len(PROV)]):
+    for i, p in enumerate(PROV[start:end], start):
         featured = i == 0
         badge = '<span class="badge">Verified</span>' if p["verified"] else '<span class="badge badge--muted">Unverified</span>'
         label = '<span class="badge badge--muted">Featured</span> ' if featured else ""
@@ -274,7 +282,11 @@ def crumbs_html(crumbs):
 
 
 MACROS = {
-    "provider_rows": lambda arg: provider_rows(int(arg) if arg else None),
+    "provider_rows": lambda arg: provider_rows(arg),
+    "ad": lambda arg: ad_slot(arg),
+    "ad_inventory": lambda arg: ad_inventory(),
+    "ad_policy": lambda arg: ad_policy(),
+    "ad_page_plan": lambda arg: ad_page_plan(),
     "category_cards": lambda arg: category_cards(),
     "recent_cards": lambda arg: recent_cards(),
     "alt_cards": lambda arg: alt_cards(),
@@ -296,7 +308,90 @@ def expand(body, meta):
             raise SystemExit(f"Unknown macro {{{{{name}}}}} in {meta['route']}")
         return MACROS[name](arg or None)
 
-    return re.sub(r"\{\{([a-z_]+(?::[a-z0-9_]+)?)\}\}", sub, body)
+    return re.sub(r"\{\{([a-z_]+(?::[a-z0-9_-]+)?)\}\}", sub, body)
+
+
+# ---------- ads (v2) ----------
+
+def size_label(sz):
+    return sz.replace("x", " × ") if sz and sz != "native" else ""
+
+
+def ad_slot(slot_id, side=None):
+    if slot_id not in ADS["slots"]:
+        raise SystemExit(f"Unknown ad slot {slot_id}")
+    PLACED.append(slot_id)
+    slot = ADS["slots"][slot_id]
+    label = e(ADS["label"])
+    href = f"/advertise/#slot-{slot_id}"
+    if slot_id == "native":
+        return f"""<aside class="ad ad--native row-card" data-ad-slot="native" aria-label="Advertisement">
+  <div class="logo-tile" aria-hidden="true">AD</div>
+  <div><p class="row-card__title"><a href="{href}" rel="sponsored nofollow">[SPONSOR NAME]</a></p>
+    <div class="row-card__meta"><span class="ad__label">{label}</span><span>[sponsor-domain.example]</span></div>
+    <p>[Sponsor line, max 140 characters. Same fields as an organic row, no rating unless the sponsor has real reviews.]</p></div>
+  <div class="row-card__actions"><a class="btn btn--ghost btn--sm" href="{href}" rel="sponsored nofollow" data-cta="ad-native">Visit site</a></div>
+</aside>"""
+    d, m = size_label(slot["desktop"]), size_label(slot["mobile"])
+    sizes = (f'<span class="ad__size ad__size--d">{d}</span>' if d else "") + (f'<span class="ad__size ad__size--m">{m}</span>' if m else "")
+    extra = f" ad--{side}" if side else ""
+    close = '<button class="ad__close" data-ad-close aria-label="Close ad">&times;</button>' if slot_id == "anchor" else ""
+    more = "" if slot_id in ("anchor", "margin") else f'<a class="ad__more" href="/advertise/#slot-{slot_id}">Advertise here</a>'
+    return f"""<aside class="ad ad--{slot_id}{extra}" data-ad-slot="{slot_id}" aria-label="Advertisement">
+  <span class="ad__label">{label}</span>{close}
+  <a class="ad__creative" href="{href}" rel="sponsored nofollow" data-cta="ad-{slot_id}{'-' + side if side else ''}">{sizes}<span class="ad__adv">[ADVERTISER CREATIVE]</span><span class="ad__name">{e(slot["name"])}</span></a>
+  {more}
+</aside>"""
+
+
+def ad_inventory():
+    rows = "".join(
+        f'<tr id="slot-{k}"><td><strong>{e(v["name"])}</strong></td><td>{size_label(v["desktop"]) or "Not shown"}</td><td>{size_label(v["mobile"]) or ("Native" if v["mobile"] == "native" else "Not shown")}</td><td>{e(v["placement"])}</td><td>{e(v["targeting"])}</td><td>{e(v["price"])}</td></tr>'
+        for k, v in ADS["slots"].items()
+    )
+    return f'<div class="table-wrap"><table><thead><tr><th scope="col">Slot</th><th scope="col">Desktop</th><th scope="col">Mobile</th><th scope="col">Where</th><th scope="col">Targeting</th><th scope="col">Price</th></tr></thead><tbody>{rows}</tbody></table></div>'
+
+
+def ad_policy():
+    return '<ul class="checklist">' + "".join(f"<li>{e(x)}</li>" for x in ADS["policy"]) + "</ul>"
+
+
+def ad_page_plan():
+    slots = list(ADS["slots"])
+    head = "".join(f'<th scope="col">{e(ADS["slots"][k]["name"])}</th>' for k in slots)
+    rows = "".join(
+        f'<tr><td><a class="link" href="{r}">{r}</a></td>' + "".join(f'<td>{"&#10003;" if k in plan else ""}</td>' for k in slots) + "</tr>"
+        for r, plan in ADS["page_plan"].items()
+    )
+    free = "".join(f'<tr><td>{r}</td><td colspan="{len(slots)}" class="muted">Ad-free</td></tr>' for r in ADS["ad_free_routes"])
+    return f'<div class="table-wrap"><table><thead><tr><th scope="col">Page</th>{head}</tr></thead><tbody>{rows}{free}</tbody></table></div>'
+
+
+def auto_ads(route, where):
+    plan = ADS["page_plan"].get(route, [])
+    if where == "top" and "leaderboard" in plan:
+        return f'<div class="ad-band"><div class="container">{ad_slot("leaderboard")}</div></div>'
+    if where == "bottom":
+        out = ""
+        if "margin" in plan:
+            out += ad_slot("margin", "left")
+            PLACED.pop()  # the pair counts as one slot
+            out += ad_slot("margin", "right")
+        if "anchor" in plan:
+            out += ad_slot("anchor")
+        return out
+    return ""
+
+
+def check_ads(route):
+    plan = ADS["page_plan"].get(route, [])
+    placed = list(PLACED)
+    if route in ADS["ad_free_routes"] and placed:
+        raise SystemExit(f"{route} is ad-free but has ads: {placed}")
+    if sorted(set(placed)) != sorted(plan) or len(placed) != len(set(placed)):
+        raise SystemExit(f"{route}: ads placed {placed} do not match page_plan {plan}")
+    if len(placed) > ADS["max_per_page"]:
+        raise SystemExit(f"{route}: {len(placed)} ads exceeds max_per_page {ADS['max_per_page']}")
 
 
 # ---------- head ----------
@@ -335,6 +430,8 @@ def ver(name):
 
 def page(meta, body):
     url = BASE_URL + meta["route"]
+    top, bottom = auto_ads(meta["route"], "top"), auto_ads(meta["route"], "bottom")
+    has_anchor = "anchor" in ADS["page_plan"].get(meta["route"], [])
     title, desc = e(meta["title"]), e(meta["description"])
     return f"""<!doctype html>
 <html lang="en">
@@ -361,13 +458,15 @@ def page(meta, body):
 <link rel="stylesheet" href="/assets/base.css?v={ver('base.css')}">
 {jsonld(meta)}
 </head>
-<body>
+<body{' class="has-anchor"' if has_anchor else ""}>
 <a class="sr-only" href="#main">Skip to content</a>
 {header()}
 <main id="main">
+{top}
 {body}
 </main>
 {footer()}
+{bottom}
 <script src="/assets/site.js?v={ver('site.js')}" defer></script>
 </body>
 </html>
@@ -386,13 +485,16 @@ def main():
         if not m:
             raise SystemExit(f"{src.name}: missing meta block")
         meta = json.loads(m.group(1))
+        PLACED.clear()
         body = expand(raw[m.end():], meta)
         if meta.get("band", True):
             body += "\n" + cta_band()
         route = meta["route"]
         dest = OUT / "404.html" if route == "/404/" else OUT / route.strip("/") / "index.html"
         dest.parent.mkdir(parents=True, exist_ok=True)
-        dest.write_text(page(meta, body))
+        html_out = page(meta, body)
+        check_ads(route)
+        dest.write_text(html_out)
         count += 1
     print(f"Rendered {count} pages into site/")
 

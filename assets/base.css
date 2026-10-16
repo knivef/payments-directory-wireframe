@@ -51,7 +51,7 @@ p { margin: 0 0 1em; }
 .wf-note { display: block; margin: 12px 0; padding: 10px 12px; border-left: 3px solid var(--accent); background: var(--warn-soft); font-size: 12px; line-height: 1.5; color: var(--fg); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
 .wf-note b { font-weight: 700; }
 body.hide-notes .wf-note { display: none; }
-.wf-toggle { position: fixed; right: 16px; bottom: 16px; z-index: 60; }
+.wf-toggle { position: fixed; right: 16px; bottom: 16px; z-index: 60; display: flex; gap: 6px; }
 
 /* Header */
 .site-header { position: sticky; top: 0; z-index: 50; background: var(--bg); border-bottom: 1px solid var(--line); }
@@ -319,3 +319,70 @@ legend { padding: 0 6px; font-weight: 600; }
 .hub-list a { display: block; padding: 16px 18px; border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; }
 .hub-list a:hover { border-color: var(--fg); }
 .hub-list code { font-size: 12px; color: var(--muted); }
+
+/* ---------- Ads (v2) ----------
+   Every slot reserves its exact height before load (no layout shift).
+   Responsive slots use container queries, so a slot picks its size from the
+   width it actually has, not the viewport. */
+.ad { container-type: inline-size; width: 100%; margin: 16px auto; text-align: center; }
+.ad__label { display: block; font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.ad__creative { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; margin: 0 auto; border: 1px dashed var(--muted); border-radius: var(--radius-sm); background: repeating-linear-gradient(45deg, var(--surface) 0 8px, var(--surface-2) 8px 16px); color: var(--muted); font-size: 12px; text-decoration: none; overflow: hidden; }
+.ad__adv { font-weight: 700; color: var(--fg); }
+.ad__size { font-variant-numeric: tabular-nums; }
+.ad__size--d { display: none; }
+.ad__name { font-size: 11px; }
+.ad__more { display: inline-block; margin-top: 4px; font-size: 11px; color: var(--muted); }
+body.hide-ads .ad, body.hide-ads .ad-band { display: none; }
+
+.ad-band { background: var(--surface); border-bottom: 1px solid var(--line); }
+.ad-band .ad { margin: 0 auto; padding: 8px 0; }
+
+/* Mobile defaults */
+.ad--leaderboard .ad__creative { width: 320px; max-width: 100%; height: 50px; }
+.ad--leaderboard .ad__name, .ad--leaderboard .ad__more { display: none; }
+.ad--billboard .ad__creative, .ad--inarticle .ad__creative, .ad--rail .ad__creative { width: 300px; max-width: 100%; height: 250px; }
+
+/* Desktop sizes when the slot has room */
+@container (min-width: 728px) {
+  .ad--leaderboard .ad__creative, .ad--inarticle .ad__creative { width: 728px; height: 90px; }
+  .ad--leaderboard .ad__size--d, .ad--inarticle .ad__size--d { display: inline; }
+  .ad--leaderboard .ad__size--m, .ad--inarticle .ad__size--m { display: none; }
+}
+@container (min-width: 970px) {
+  .ad--billboard .ad__creative { width: 970px; height: 250px; }
+  .ad--billboard .ad__size--d { display: inline; }
+  .ad--billboard .ad__size--m { display: none; }
+}
+.ad--rail { margin: 0 0 16px; }
+.ad--rail .ad__size--d { display: inline; }
+.ad--rail .ad__size--m { display: none; }
+
+/* Margin skyscrapers: outside the 1200px column, only when both fit */
+.ad--margin { display: none; position: fixed; top: 84px; width: 160px; margin: 0; z-index: 5; }
+.ad--margin .ad__creative { width: 160px; height: 600px; }
+.ad--margin .ad__size--d { display: inline; }
+@media (min-width: 1560px) {
+  .ad--margin { display: block; }
+  .ad--left { left: calc(50% - 600px - 180px); }
+  .ad--right { right: calc(50% - 600px - 180px); }
+}
+
+/* Mobile anchor: phones only, dismissible */
+.ad--anchor { position: fixed; left: 0; right: 0; bottom: 0; z-index: 65; margin: 0; padding: 4px 0 6px; background: var(--bg); border-top: 1px solid var(--line); }
+.ad--anchor .ad__label { margin-bottom: 2px; }
+.ad--anchor .ad__creative { width: 320px; max-width: 100%; height: 50px; }
+.ad--anchor .ad__name { display: none; }
+.ad--anchor[hidden] { display: none; }
+.ad__close { position: absolute; right: 8px; top: -26px; width: 32px; height: 26px; border: 1px solid var(--line); border-bottom: 0; border-radius: var(--radius-sm) var(--radius-sm) 0 0; background: var(--bg); color: var(--fg); cursor: pointer; font-size: 16px; line-height: 1; }
+@media (min-width: 768px) { .ad--anchor { display: none; } }
+@media (max-width: 767px) {
+  body.has-anchor { padding-bottom: 72px; }
+  body.has-anchor .wf-toggle { bottom: 112px; }
+  body.has-anchor .cookie { bottom: 96px; }
+}
+
+/* Sponsored listing: same shape as an organic row, visibly different */
+.ad--native { text-align: left; margin: 0 0 12px; border-style: dashed; border-color: var(--muted); background: var(--surface); container-type: normal; }
+.ad--native .ad__label { display: inline-block; margin: 0; padding: 2px 8px; border-radius: 999px; background: var(--surface-2); color: var(--fg); }
+.row-card__title { margin: 0; font-size: 17px; font-weight: 600; }
+.row-card__title a { text-decoration: none; }

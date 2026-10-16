@@ -6,8 +6,10 @@
 {{crumbs}}
 <section class="section--tight">
   <div class="container">
-    <h1 style="font-size:clamp(32px,5vw,48px)">Wireframe hub</h1>
-    <p class="hero__sub">Internal review build of a broad payments provider directory, benchmarked against PayAtlas. Every template below is clickable. Yellow notes explain decisions; toggle them with the button bottom right.</p>
+    <span class="pill">Version 2 · with ads</span>
+    <h1 style="font-size:clamp(32px,5vw,48px);margin-top:12px">Wireframe hub</h1>
+    <p class="hero__sub">Internal review build of a broad payments provider directory, benchmarked against PayAtlas. Every template below is clickable. Yellow notes explain decisions. Version 2 adds banner, margin, sidebar, in-article and sponsored listing ads; striped boxes marked Sponsored are ad slots. Use the buttons bottom right to hide ads or notes and compare.</p>
+    <p class="small muted">Margin skyscrapers only appear on screens 1560px and wider. Mobile adds a dismissible bottom anchor ad.</p>
     <h2>Templates</h2>
     <ul class="hub-list">
       <li><a href="/"><strong>Home</strong><br><code>/</code></a></li>
@@ -27,8 +29,11 @@
       <li><a href="/mcc/5967/"><strong>MCC code</strong><br><code>/mcc/{code}/</code></a></li>
       <li><a href="/journal/sample-guide/"><strong>Journal article</strong><br><code>/journal/{slug}/</code></a></li>
       <li><a href="/events/"><strong>Events</strong><br><code>/events/</code></a></li>
+      <li><a href="/advertise/"><strong>Advertise (new in v2)</strong><br><code>/advertise/</code></a></li>
       <li><a href="/404.html"><strong>404</strong><br><code>/404</code></a></li>
     </ul>
+    <h2 style="margin-top:48px">Ad inventory by page</h2>
+    {{ad_page_plan}}
     <h2 style="margin-top:48px" id="how-we-rank">Pages not built in the wireframe</h2>
     <p class="muted">About, How we rank, Ownership, Roadmap, Contact and legal pages link here. "How we rank" and "Ownership" are launch requirements: they answer the neutrality question PayAtlas leaves open.</p>
     <p class="muted" id="ownership">Links to unbuilt entities (other services, countries, providers) open the sample page for that template, with the intended slug in the query string.</p>

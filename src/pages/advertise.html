@@ -1,0 +1,77 @@
+<!--meta
+{"route": "/advertise/", "title": "Advertise to Merchants Choosing a Payment Provider · [DIRECTORY NAME]",
+ "description": "Banner, margin and sponsored listing placements by service, country and industry. Reach merchants while they compare payment providers.",
+ "crumbs": [["Home", "/"], ["Advertise", null]],
+ "jsonld": [{"@type": "Service", "name": "Advertising on [DIRECTORY NAME]", "serviceType": "Display and sponsored listing advertising", "provider": {"@type": "Organization", "name": "[DIRECTORY NAME]"}}],
+ "band": false}
+-->
+{{crumbs}}
+<section class="hero">
+  <div class="container hero__grid">
+    <div>
+      <span class="pill">Advertise</span>
+      <h1 style="margin-top:16px">Reach merchants <span class="serif-accent">while</span> they choose a provider</h1>
+      <p class="hero__sub">Buy placements by service category, country or industry. Every ad is labelled, sits apart from rankings and never changes them.</p>
+      <div class="hero__ctas"><a class="btn btn--primary btn--lg" href="#book" data-cta="adv-hero-book">Request the media kit</a><a class="btn btn--ghost btn--lg" href="#inventory" data-cta="adv-hero-inventory">See placements</a></div>
+    </div>
+    <div class="ph hero__art">Page diagram: top banner, two margin skyscrapers, sidebar box and a sponsored listing row, each outlined and named</div>
+  </div>
+</section>
+
+<section class="section--tight">
+  <div class="container">
+    <div class="stats">
+      <div><strong>[N]</strong><span>monthly visitors</span></div>
+      <div><strong>[N]%</strong><span>merchants and payment buyers</span></div>
+      <div><strong>[N]</strong><span>service category pages</span></div>
+      <div><strong>[N]</strong><span>country and industry guides</span></div>
+    </div>
+    <span class="wf-note"><b>Audience.</b> Advertisers buy on audience proof. Leave these as placeholders until analytics has 90 days of data. Never estimate them.</span>
+  </div>
+</section>
+
+<section class="section" id="inventory">
+  <div class="container">
+    <div class="section-head"><div><span class="pill pill--plain">Inventory</span><h2>Placements</h2><p>Direct-sold, monthly, one advertiser per slot per targeting segment. No ad network, no third-party tracking.</p></div></div>
+    {{ad_inventory}}
+  </div>
+</section>
+
+<section class="section section--surface">
+  <div class="container">
+    <div class="section-head"><div><span class="pill pill--plain">Targeting</span><h2>Buy the pages your buyers read</h2></div></div>
+    <div class="grid grid--3">
+      <div class="card"><h3>By service</h3><p>Own the sidebar and sponsored row on a category such as card processing or payouts.</p></div>
+      <div class="card"><h3>By country</h3><p>Banner and in-article units on a country guide and its service pages.</p></div>
+      <div class="card"><h3>By industry</h3><p>Reach iGaming, crypto or travel merchants on their industry guide and MCC pages.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><div><span class="pill pill--plain">Where ads run</span><h2>Page by page</h2><p>Conversion pages stay ad-free so merchants finish what they started.</p></div></div>
+    {{ad_page_plan}}
+  </div>
+</section>
+
+<section class="section section--surface">
+  <div class="container split">
+    <div><h2>Ad policy</h2><p class="muted">The directory only works if merchants trust the rankings. These rules are public and apply to every advertiser.</p></div>
+    <div>{{ad_policy}}</div>
+  </div>
+</section>
+
+<section class="section" id="book">
+  <div class="container" style="max-width:640px">
+    <h2>Request the media kit</h2>
+    <form data-wf-form="stay">
+      <div class="field"><label for="ad-name">Name</label><input class="input" id="ad-name" required></div>
+      <div class="field"><label for="ad-email">Work email</label><input class="input" id="ad-email" type="email" required></div>
+      <div class="field"><label for="ad-co">Company</label><input class="input" id="ad-co"></div>
+      <div class="field"><label for="ad-interest">Interested in</label><select class="input" id="ad-interest"><option>Top banner</option><option>Margin skyscrapers</option><option>Sponsored listing</option><option>Sidebar box</option><option>Country or industry guide</option><option>Not sure yet</option></select></div>
+      <button class="btn btn--primary btn--lg" data-cta="adv-submit">Send me the media kit</button>
+      <p class="small" data-form-msg hidden>Wireframe: form does not submit.</p>
+    </form>
+  </div>
+</section>

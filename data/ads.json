@@ -1,0 +1,83 @@
+{
+  "_note": "Ad inventory for v2. Direct-sold sponsors only, no ad network scripts. render.py places slots from here; check.sh enforces the policy fields. Prices are placeholders.",
+  "label": "Sponsored",
+  "max_per_page": 6,
+  "ad_free_routes": ["/match/", "/assist/", "/for-providers/", "/advertise/", "/hub/", "/404/"],
+  "slots": {
+    "leaderboard": {
+      "name": "Top banner",
+      "desktop": "728x90", "mobile": "320x50",
+      "placement": "Below the header, above the breadcrumb. Site-wide on ad-eligible pages.",
+      "targeting": "Run of site, or by section (providers, guides, compare)",
+      "price": "[PRICE] per month", "auto": true
+    },
+    "margin": {
+      "name": "Margin skyscrapers",
+      "desktop": "160x600", "mobile": null,
+      "placement": "Left and right page margins, sticky, outside the 1200px content column. Only on screens 1560px and wider.",
+      "targeting": "Run of site, sold as a pair",
+      "price": "[PRICE] per month", "auto": true
+    },
+    "billboard": {
+      "name": "Billboard",
+      "desktop": "970x250", "mobile": "300x250",
+      "placement": "Between sections on the home and country index pages.",
+      "targeting": "Home takeover, or country index",
+      "price": "[PRICE] per month"
+    },
+    "inarticle": {
+      "name": "In-article banner",
+      "desktop": "728x90", "mobile": "300x250",
+      "placement": "Mid-article on guides, between H2 sections. Never inside a table or the comparison block.",
+      "targeting": "By country, industry, payment method or MCC",
+      "price": "[PRICE] per month"
+    },
+    "rail": {
+      "name": "Sidebar box",
+      "desktop": "300x250", "mobile": "300x250",
+      "placement": "In the right-hand aside on profiles, category pages and reference pages. Sits below page facts, never above them.",
+      "targeting": "By service category or reference page",
+      "price": "[PRICE] per month"
+    },
+    "native": {
+      "name": "Sponsored listing",
+      "desktop": "native", "mobile": "native",
+      "placement": "In-feed provider row after the third organic result on listing and category pages. Same layout as a listing, clearly labelled.",
+      "targeting": "By service category and country",
+      "price": "[PRICE] per month"
+    },
+    "anchor": {
+      "name": "Mobile anchor",
+      "desktop": null, "mobile": "320x50",
+      "placement": "Fixed to the bottom of the screen on phones. Dismissible, hidden after close for the session.",
+      "targeting": "Run of site",
+      "price": "[PRICE] per month", "auto": true
+    }
+  },
+  "policy": [
+    "Every ad carries a visible Sponsored label and sits in its own bordered container, separate from organic content.",
+    "Ad links use rel=\"sponsored nofollow\" and open the advertiser site directly. No tracking pixels in the wireframe.",
+    "Ads never change ranking, verdicts, ratings or the default sort. The How we rank page says so.",
+    "No ads inside comparison tables, search results ordering, forms or the match tool.",
+    "Conversion pages are ad-free: match, assist, for providers, advertise.",
+    "We only accept advertisers that hold the licences their product requires. Unlicensed or prohibited services are declined.",
+    "Every slot reserves its height before load so ads never shift the layout.",
+    "Verified profiles on the paid provider tier can remove competitor sidebar ads from their own profile."
+  ],
+  "page_plan": {
+    "/": ["leaderboard", "margin", "billboard", "anchor"],
+    "/providers/": ["leaderboard", "margin", "native", "anchor"],
+    "/providers/card-processing/": ["leaderboard", "margin", "native", "rail", "anchor"],
+    "/provider/provider-alpha/": ["leaderboard", "margin", "rail", "anchor"],
+    "/compare/": ["leaderboard", "margin", "anchor"],
+    "/compare/provider-alpha-vs-provider-beta/": ["leaderboard", "margin", "inarticle", "anchor"],
+    "/countries/": ["leaderboard", "margin", "billboard", "anchor"],
+    "/countries/brazil/": ["leaderboard", "margin", "inarticle", "anchor"],
+    "/industries/igaming/": ["leaderboard", "margin", "inarticle", "anchor"],
+    "/payment-methods/pix/": ["leaderboard", "margin", "inarticle", "rail", "anchor"],
+    "/glossary/3ds/": ["leaderboard", "margin", "rail", "anchor"],
+    "/mcc/5967/": ["leaderboard", "margin", "inarticle", "anchor"],
+    "/journal/sample-guide/": ["leaderboard", "margin", "inarticle", "anchor"],
+    "/events/": ["leaderboard", "margin", "inarticle", "anchor"]
+  }
+}

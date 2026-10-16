@@ -27,6 +27,9 @@ Stage 2. prompts/02-design-system.md
   Output: assets/tokens.css, assets/base.css, assets/site.js
 Stage 3. prompts/03-templates.md
   Output: data/providers.json, data/faqs.json, src/pages/*.html, rendered site/
+Stage 3b. prompts/03b-ads.md (v2)
+  Output: data/ads.json, ad slots on every eligible page, /advertise/,
+  docs/ads-spec.md, check.sh section 6
 Stage 4. prompts/04-seo-pass.md
   Output: titles, descriptions, JSON-LD and internal links on every page,
   docs/seo-spec.md and docs/cta-map.md reconciled with what was built
@@ -39,7 +42,7 @@ Rules for every stage:
   literal [BRACKETED PLACEHOLDER] instead.
 - Plain HTML and CSS, rendered by scripts/render.py. No framework, no
   package manager, no build step on Vercel.
-- Run ./scripts/check.sh at the end of stages 2, 3, 4 and 5. Do not hand back
+- Run ./scripts/check.sh at the end of stages 2, 3, 3b, 4 and 5. Do not hand back
   a stage with a failing check.
 - When the benchmark does something we deliberately do differently, add a
   <span class="wf-note"> on the page saying what they do, what we do, and why.

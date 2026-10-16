@@ -24,7 +24,9 @@
     </div>
     <div>
       <h2 class="sr-only">Results</h2><div class="results-head"><strong>[N] card processing providers</strong><label class="small">Sort <select aria-label="Sort"><option>Most complete</option><option>Highest rated</option></select></label></div>
-      {{provider_rows:5}}
+      {{provider_rows:0-3}}
+      {{ad:native}}
+      {{provider_rows:3-5}}
       <div style="text-align:center;margin-top:24px"><a class="btn btn--ghost" href="/providers/">See all [N]</a></div>
     </div>
   </div>
@@ -48,6 +50,7 @@
       <div class="aside-card"><h3>Related services</h3><a class="tag" href="/providers/card-processing/?s=acquiring">Acquiring</a><a class="tag" href="/providers/card-processing/?s=merchant-accounts">Merchant accounts</a><a class="tag" href="/providers/card-processing/?s=payment-orchestration">Orchestration</a><a class="tag" href="/providers/card-processing/?s=3d-secure">3D Secure</a></div>
       <div class="aside-card"><h3>Popular comparisons</h3><p><a class="link" href="/compare/provider-alpha-vs-provider-beta/">Provider Alpha vs Provider Beta</a></p><p><a class="link" href="/compare/provider-alpha-vs-provider-beta/">Provider Alpha vs Provider Epsilon</a></p></div>
       <div class="aside-card"><h3>Guides</h3><p><a class="link" href="/glossary/3ds/">What is 3D Secure?</a></p><p><a class="link" href="/mcc/5967/">MCC 5967 explained</a></p></div>
+      {{ad:rail}}
     </aside>
   </div>
 </section>

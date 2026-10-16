@@ -91,5 +91,36 @@ PY
 [ $? -ne 0 ] && FAIL=1
 echo
 
+echo "6. Ad policy (v2)"
+python3 - <<'PY'
+import json, re, sys
+from pathlib import Path
+ads = json.loads(Path("data/ads.json").read_text())
+site = Path("site"); bad = 0; total = 0
+free = {r for r in ads["ad_free_routes"]}
+for p in sorted(site.rglob("*.html")):
+    route = "/404/" if p.name == "404.html" else "/" + str(p.relative_to(site)).replace("index.html", "")
+    src = p.read_text()
+    blocks = re.findall(r'<aside class="ad[ "][^>]*data-ad-slot="([a-z]+)"[^>]*>(.*?)</aside>', src, re.S)
+    total += len(blocks)
+    if route in free and blocks: print(f"  FAIL  {route}: ad-free page has {len(blocks)} ad(s)"); bad = 1
+    for slot, inner in blocks:
+        if ads["label"] not in inner: print(f"  FAIL  {route}: {slot} ad has no '{ads['label']}' label"); bad = 1
+        for a in re.findall(r'<a [^>]*class="(?:ad__creative|btn[^"]*)"[^>]*>', inner):
+            if 'rel="sponsored nofollow"' not in a: print(f"  FAIL  {route}: {slot} ad link missing rel=sponsored"); bad = 1
+    for tag in ("table", "form"):
+        for chunk in re.findall(rf"<{tag}\b.*?</{tag}>", src, re.S):
+            if "data-ad-slot" in chunk: print(f"  FAIL  {route}: ad inside <{tag}>"); bad = 1
+    slots = {s for s, _ in blocks}
+    planned = set(ads["page_plan"].get(route, []))
+    if slots != planned: print(f"  FAIL  {route}: rendered {sorted(slots)} vs plan {sorted(planned)}"); bad = 1
+    counted = len(blocks) - (1 if "margin" in slots else 0)
+    if counted > ads["max_per_page"]: print(f"  FAIL  {route}: {counted} ads, max {ads['max_per_page']}"); bad = 1
+if not bad: print(f"  ok    {total} ad units: labelled, rel=sponsored, none in tables or forms, match page plan, ad-free routes clean")
+sys.exit(bad)
+PY
+[ $? -ne 0 ] && FAIL=1
+echo
+
 [ $FAIL -eq 0 ] && echo "All checks passed." || echo "Checks failed. Fix the items above before pushing."
 exit $FAIL

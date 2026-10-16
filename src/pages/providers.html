@@ -21,7 +21,10 @@
         <h2 class="sr-only">Results</h2><div class="results-head"><strong>[N] providers</strong>
           <label class="small">Sort <select aria-label="Sort"><option>Most complete</option><option>Highest rated</option><option>Newest</option><option>A to Z</option></select></label></div>
         <span class="wf-note"><b>Ordering.</b> Default sort is profile completeness plus verified data, explained on the How we rank page. Featured rows are always labelled. Filter state lives in query strings, which robots.txt blocks; service categories get their own crawlable paths instead.</span>
-        {{provider_rows}}
+        {{provider_rows:0-3}}
+        {{ad:native}}
+        {{provider_rows:3-8}}
+        <span class="wf-note"><b>Sponsored listing.</b> Distinct from "Featured" (a provider-tier placement, row 1). The sponsored row is an ad bought by category and country, sits after the third organic result, never above it, and carries no rating unless the sponsor has real reviews.</span>
         <div style="text-align:center;margin-top:24px"><button class="btn btn--ghost">Show more</button></div>
         <p class="small muted" style="text-align:center">Pagination also renders as plain links (?page=2) for crawlers.</p>
       </div>

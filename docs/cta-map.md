@@ -33,6 +33,19 @@ analytics. Event name convention: `cta_click` with `cta` = the data-cta value.
 | Journal | Find a provider | Read related guides | Share |
 | Events | View event | Submit an event | |
 
+## Ads (v2)
+
+| Slot | data-cta | Destination |
+|---|---|---|
+| Top banner | `ad-leaderboard` | Advertiser, rel=sponsored |
+| Margin pair | `ad-margin-left`, `ad-margin-right` | Advertiser, rel=sponsored |
+| Billboard, in-article, sidebar | `ad-billboard`, `ad-inarticle`, `ad-rail` | Advertiser, rel=sponsored |
+| Sponsored listing | `ad-native` | Advertiser, rel=sponsored |
+| Mobile anchor | `ad-anchor` | Advertiser, rel=sponsored |
+| Advertise page | `adv-hero-book`, `adv-hero-inventory`, `adv-submit` | Media kit form |
+
+Ad CTAs never use `.btn--primary`. The page primary stays the merchant action.
+
 ## Auth gating
 
 Gated: Request intro, contacts on profiles, writing reviews. Ungated: all
